@@ -29,8 +29,8 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* 4 Architectural Services Cards with High-Res Imagery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {/* 5 Architectural Services Cards with High-Res Imagery */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {t.items.map((service, index) => (
             <motion.div
               key={service.number}

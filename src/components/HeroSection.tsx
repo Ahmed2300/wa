@@ -113,6 +113,13 @@ export default function HeroSection() {
             </a>
 
             <a
+              href="#contact"
+              className="group inline-flex items-center space-x-2 px-7 py-4 border border-brand-hairline bg-brand-sand/30 hover:border-brand-black text-brand-black rounded-none text-xs font-medium tracking-editorial uppercase transition-all duration-300 shadow-xs"
+            >
+              <span>{t.ctaSecondary}</span>
+            </a>
+
+            <a
               href="#studio"
               className="inline-flex items-center space-x-2.5 text-xs font-normal tracking-editorial uppercase text-brand-muted hover:text-brand-black py-4 transition-colors duration-200 group"
             >

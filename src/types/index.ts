@@ -6,12 +6,19 @@ export interface Project {
   location: string;
   year: string;
   area: string;
+  duration?: string;
   category: string;
   description: string;
   materials: string[];
   imageUrl: string;
   aspect?: string;
   featured?: boolean;
+}
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+  location: string;
 }
 
 export interface ServiceItem {

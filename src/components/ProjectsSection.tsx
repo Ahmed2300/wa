@@ -17,8 +17,8 @@ export default function ProjectsSection() {
   const filteredProjects = t.items.filter((item) => {
     if (activeFilter === 'all') return true;
     if (activeFilter === 'haussmann') return item.category.toLowerCase().includes('haussmann');
-    if (activeFilter === 'duplex') return item.category.toLowerCase().includes('duplex');
-    if (activeFilter === 'hotel') return item.category.toLowerCase().includes('hôtel') || item.category.toLowerCase().includes('mansion');
+    if (activeFilter === 'duplex') return item.category.toLowerCase().includes('contemporain') || item.category.toLowerCase().includes('duplex');
+    if (activeFilter === 'hotel') return item.category.toLowerCase().includes('hôtel') || item.category.toLowerCase().includes('familial') || item.category.toLowerCase().includes('mansion');
     return true;
   });
 
@@ -197,7 +197,12 @@ export default function ProjectsSection() {
                           <MapPin className="w-3 h-3 text-brand-clay" />
                           <span>{project.location}</span>
                         </span>
-                        <span className="font-mono text-brand-clay font-medium">{project.year}</span>
+                        <div className="flex items-center space-x-2 font-mono text-[11px]">
+                          {project.duration && (
+                            <span className="text-brand-clay font-medium">{project.duration} ·</span>
+                          )}
+                          <span className="text-brand-black">{project.area}</span>
+                        </div>
                       </div>
 
                       {/* Project Name */}
@@ -292,6 +297,43 @@ export default function ProjectsSection() {
         )}
           </motion.div>
         </AnimatePresence>
+
+        {/* Section Retours Clients (Client Reviews) */}
+        {t.testimonials && t.testimonials.length > 0 && (
+          <div className="mt-24 sm:mt-32 pt-16 border-t border-brand-hairline">
+            <div className="max-w-3xl mb-12">
+              <div className="flex items-center space-x-3 mb-2">
+                <span className="w-5 h-[1px] bg-brand-clay" />
+                <span className="font-sans text-[11px] font-normal tracking-editorial text-brand-clay uppercase">
+                  {language === 'fr' ? 'TÉMOIGNAGES · CONFIANCE' : 'TESTIMONIALS · TRUST'}
+                </span>
+              </div>
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-brand-black">
+                {t.testimonialsTitle}
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {t.testimonials.map((test, idx) => (
+                <div
+                  key={idx}
+                  className="p-8 sm:p-10 border border-brand-hairline bg-brand-sand/30 relative flex flex-col justify-between"
+                >
+                  <span className="font-serif text-6xl text-brand-clay/20 absolute top-4 left-6 select-none pointer-events-none">
+                    “
+                  </span>
+                  <blockquote className="relative z-10 font-serif text-lg sm:text-xl text-brand-black/95 font-normal italic leading-relaxed mb-6 pt-3">
+                    &laquo;&nbsp;{test.quote}&nbsp;&raquo;
+                  </blockquote>
+                  <div className="flex items-center justify-between text-xs tracking-editorial uppercase text-brand-muted font-sans border-t border-brand-hairline pt-4">
+                    <span className="font-medium text-brand-black">{test.author}</span>
+                    <span className="font-mono text-[11px] text-brand-clay">{test.location}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
       </div>
 

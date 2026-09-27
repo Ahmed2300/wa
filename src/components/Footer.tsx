@@ -77,8 +77,7 @@ export default function Footer() {
                 Contact
               </p>
               <ul className="space-y-2 text-brand-muted text-[11px] normal-case tracking-normal">
-                <li><a href="mailto:contact@wadesign.fr" className="hover:text-brand-black">contact@wadesign.fr</a></li>
-                <li><a href="tel:+33142685014" className="hover:text-brand-black">+33 (0)1 42 68 50 14</a></li>
+                <li><a href="mailto:contact@wadesignfrance.com" className="hover:text-brand-black">contact@wadesignfrance.com</a></li>
                 <li className="pt-2">
                   <a href="#contact" className="underline underline-offset-4 text-brand-black hover:text-brand-clay uppercase tracking-widest text-[10px]">
                     {nav.bookConsultation}
@@ -92,7 +91,7 @@ export default function Footer() {
         {/* Bottom Tier: Copyright, Legals & Scroll to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-sans text-brand-muted tracking-wider gap-4">
           <div className="text-center sm:text-left">
-            <span>© 2024–2026 WA Design France. {t.rights}</span>
+            <span>{t.copyright}</span>
           </div>
 
           <div className="flex items-center space-x-6">
@@ -101,7 +100,7 @@ export default function Footer() {
             </a>
             <span className="text-brand-hairline">|</span>
             <a href="#" className="hover:text-brand-black transition-colors">
-              {t.privacy}
+              {t.confidentiality}
             </a>
             <span className="text-brand-hairline">|</span>
             <button
