@@ -59,8 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${ebGaramond.variable} ${sansFont.variable} scroll-smooth`}>
-      <body className="bg-brand-bg text-brand-black min-h-screen antialiased selection:bg-brand-sand relative">
+    <html lang="fr" className={`${ebGaramond.variable} ${sansFont.variable} scroll-smooth`} suppressHydrationWarning>
+      <body className="bg-brand-bg text-brand-black min-h-screen antialiased selection:bg-brand-sand relative" suppressHydrationWarning>
         <LanguageProvider>
           <PageTransition />
           <SmoothScroll>

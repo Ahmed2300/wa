@@ -1,0 +1,4 @@
+fix: resolve Framer Motion non-animatable backgroundColor and browser extension hydration warning
+
+- Replace 'transparent' with 'rgba(138, 122, 92, 0)' in CustomCursor to fix Framer Motion animation warning
+- Add suppressHydrationWarning to <html> and <body> in RootLayout to prevent React hydration mismatch caused by client browser extensions (Grammarly, Demoway)
