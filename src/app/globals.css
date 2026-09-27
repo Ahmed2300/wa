@@ -60,3 +60,69 @@ html.lenis, html.lenis body {
   height: 1px;
   background-color: rgba(8, 8, 8, 0.10);
 }
+
+/* ==========================================================================
+   Clean Architectural Luxury Scrollbar System
+   Replaces default OS/Windows scrollbars with minimal, elegant 6px pills
+   ========================================================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(106, 101, 103, 0.45) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(106, 101, 103, 0.4);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #B23A22; /* Signature terracotta accent on hover */
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Eliminate default ugly Windows scrollbar buttons/arrows */
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Dedicated Clean Dialog/Modal Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(106, 101, 103, 0.5) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(8, 8, 8, 0.02);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(106, 101, 103, 0.45);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #B23A22;
+}
+

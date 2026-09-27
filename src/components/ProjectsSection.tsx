@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT } from '@/data/content';
 import { Project } from '@/types';
@@ -157,6 +157,17 @@ export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'index'>('grid');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
 
   const filteredProjects = t.items.filter((item) => {
     if (activeFilter === 'all') return true;
@@ -379,13 +390,19 @@ export default function ProjectsSection() {
       {/* Project Detail Modal Monograph */}
       <AnimatePresence>
         {selectedProject && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-brand-black/80 backdrop-blur-sm">
+          <div
+            data-lenis-prevent="true"
+            onClick={() => setSelectedProject(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-brand-black/80 backdrop-blur-sm"
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.3 }}
-              className="bg-brand-bg border border-brand-hairline max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl"
+              data-lenis-prevent="true"
+              onClick={(e) => e.stopPropagation()}
+              className="bg-brand-bg border border-brand-hairline max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl custom-scrollbar overscroll-contain"
             >
               {/* Close Button */}
               <button

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT } from '@/data/content';
 import { MaterialSpecimen } from '@/types';
@@ -11,6 +11,17 @@ export default function MaterialInspector() {
   const { language } = useLanguage();
   const t = CONTENT[language].materials;
   const [selectedMaterial, setSelectedMaterial] = useState<MaterialSpecimen | null>(null);
+
+  useEffect(() => {
+    if (selectedMaterial) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedMaterial]);
 
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -127,12 +138,18 @@ export default function MaterialInspector() {
       {/* Material Detailed Inspection Modal */}
       <AnimatePresence>
         {selectedMaterial && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-brand-black/75 backdrop-blur-sm">
+          <div
+            data-lenis-prevent="true"
+            onClick={() => setSelectedMaterial(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-brand-black/75 backdrop-blur-sm"
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-brand-bg border border-brand-hairline max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl"
+              data-lenis-prevent="true"
+              onClick={(e) => e.stopPropagation()}
+              className="bg-brand-bg border border-brand-hairline max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl custom-scrollbar overscroll-contain"
             >
               <button
                 type="button"

@@ -1,0 +1,6 @@
+fix(ux): isolate modal scroll focus & implement clean luxury scrollbar
+
+- Isolate modal scroll focus from Lenis smooth-scroll via data-lenis-prevent and MutationObserver
+- Add document.body scroll locking on modal open across Projects, Instagram, Materials, and Mobile Nav
+- Replace OS/Windows default scrollbars with architectural 6px minimalist pill scrollbars and remove ugly arrow steppers
+- Apply custom-scrollbar and overscroll-contain to all dialog modals ensuring smooth internal wheel scrolling

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT } from '@/data/content';
 import { SocialTile } from '@/types';
@@ -11,6 +11,17 @@ export default function InstagramGrid() {
   const { language } = useLanguage();
   const t = CONTENT[language].socialGrid;
   const [activeTile, setActiveTile] = useState<SocialTile | null>(null);
+
+  useEffect(() => {
+    if (activeTile) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [activeTile]);
 
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -143,12 +154,18 @@ export default function InstagramGrid() {
       {/* Instagram Photo Lightbox Modal */}
       <AnimatePresence>
         {activeTile && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-brand-black/85 backdrop-blur-md">
+          <div
+            data-lenis-prevent="true"
+            onClick={() => setActiveTile(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-brand-black/85 backdrop-blur-md"
+          >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-brand-bg border border-brand-hairline max-w-4xl w-full max-h-[92vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl"
+              data-lenis-prevent="true"
+              onClick={(e) => e.stopPropagation()}
+              className="bg-brand-bg border border-brand-hairline max-w-4xl w-full max-h-[92vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl custom-scrollbar overscroll-contain"
             >
               <button
                 type="button"

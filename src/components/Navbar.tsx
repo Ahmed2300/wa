@@ -27,6 +27,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
       {/* Scroll Progress Hairline Indicator */}
@@ -208,7 +219,8 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-20 bg-brand-bg border-b border-brand-hairline z-40 lg:hidden px-8 py-10 shadow-2xl"
+            data-lenis-prevent="true"
+            className="fixed inset-x-0 top-20 bg-brand-bg border-b border-brand-hairline z-40 lg:hidden px-8 py-10 shadow-2xl max-h-[calc(100vh-5rem)] overflow-y-auto custom-scrollbar overscroll-contain"
           >
             <div className="flex flex-col space-y-6 text-xs font-sans tracking-[0.22em] uppercase text-brand-black">
               <a
