@@ -1,11 +1,155 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT } from '@/data/content';
 import { Project } from '@/types';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight, X, LayoutGrid, ListFilter, MapPin, Calendar, Maximize2, Compass } from 'lucide-react';
+function ParallaxProjectCard({
+  project,
+  isEven,
+  language,
+  t,
+  onSelect,
+}: {
+  project: Project;
+  isEven: boolean;
+  language: string;
+  t: (typeof CONTENT)['fr']['projects'];
+  onSelect: (p: Project) => void;
+}) {
+  const cardRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ['start end', 'end start'],
+  });
+
+  // Subtle optical travel inside the photographic frame (zero overflow leak)
+  const imgY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
+  const textY = useTransform(scrollYProgress, [0, 1], ['2.5%', '-2.5%']);
+
+  return (
+    <motion.article
+      ref={cardRef}
+      id={project.id}
+      layout
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center group"
+    >
+      {/* Visual Imagery Column (7 cols) */}
+      <div
+        className={`lg:col-span-7 ${
+          isEven ? 'lg:order-1' : 'lg:order-2'
+        }`}
+      >
+        <div
+          onClick={() => onSelect(project)}
+          className="relative overflow-hidden bg-brand-sand/40 border border-brand-hairline rounded-none cursor-pointer group"
+        >
+          {/* Corner markers */}
+          <span className="absolute top-2 left-2 z-20 text-[10px] font-mono text-brand-black/40">+</span>
+          <span className="absolute bottom-2 right-2 z-20 text-[10px] font-mono text-brand-black/40">+</span>
+
+          {/* In-Frame Parallax Container */}
+          <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[580px] overflow-hidden">
+            <motion.div
+              style={{ y: imgY, scale: 1.12 }}
+              className="w-full h-full will-change-transform"
+            >
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
+
+          {/* Top floating spec tag */}
+          <div className="absolute top-4 left-4 bg-brand-bg/95 backdrop-blur-xs px-3.5 py-1.5 text-[10px] uppercase font-sans tracking-widest text-brand-black border border-brand-hairline z-20">
+            {project.category} · {project.area}
+          </div>
+
+          {/* Hover Quick View Trigger */}
+          <div className="absolute inset-0 bg-brand-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+            <span className="bg-brand-bg text-brand-black text-[11px] uppercase tracking-editorial px-5 py-2.5 border border-brand-black inline-flex items-center space-x-2 shadow-lg">
+              <Maximize2 className="w-3.5 h-3.5 text-brand-clay" />
+              <span>{language === 'fr' ? 'Ouvrir la monographie' : 'Open Monograph'}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Editorial Content Column (5 cols) with subtle differential float */}
+      <motion.div
+        style={{ y: textY }}
+        className={`lg:col-span-5 ${
+          isEven ? 'lg:order-2' : 'lg:order-1'
+        } flex flex-col justify-center will-change-transform`}
+      >
+        {/* Project Index & Location */}
+        <div className="flex items-center justify-between text-xs tracking-editorial uppercase text-brand-muted mb-3 font-sans">
+          <span className="flex items-center space-x-1.5">
+            <MapPin className="w-3 h-3 text-brand-clay" />
+            <span>{project.location}</span>
+          </span>
+          <div className="flex items-center space-x-2 font-mono text-[11px]">
+            {project.duration && (
+              <span className="text-brand-clay font-medium">{project.duration} ·</span>
+            )}
+            <span className="text-brand-black">{project.area}</span>
+          </div>
+        </div>
+
+        {/* Project Name */}
+        <h3
+          onClick={() => onSelect(project)}
+          className="font-serif text-2xl sm:text-3xl lg:text-4xl text-brand-black font-normal mb-4 leading-tight group-hover:text-brand-clay transition-colors duration-200 cursor-pointer"
+        >
+          {project.title}
+        </h3>
+
+        {/* Narrative Description */}
+        <p className="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed mb-6">
+          {project.description}
+        </p>
+
+        {/* Material Swatches list */}
+        <div className="mb-8 pt-4 border-t border-brand-hairline">
+          <p className="text-[10px] tracking-editorial uppercase text-brand-muted mb-3 font-medium">
+            {language === 'fr' ? 'Matières & Finitions' : 'Materials & Finishes'}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {project.materials.map((mat, i) => (
+              <span
+                key={i}
+                className="bg-brand-sand/40 border border-brand-hairline/80 px-2.5 py-1 text-[11px] text-brand-black font-light tracking-wide rounded-none"
+              >
+                {mat}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Action Button */}
+        <div>
+          <button
+            type="button"
+            onClick={() => onSelect(project)}
+            className="inline-flex items-center space-x-2 text-xs font-normal tracking-editorial uppercase text-brand-black border-b border-brand-black pb-1 hover:border-brand-clay hover:text-brand-clay transition-all duration-200 cursor-pointer"
+          >
+            <span>{t.viewProject}</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+      </motion.div>
+    </motion.article>
+  );
+}
 
 export default function ProjectsSection() {
   const { language } = useLanguage();
@@ -132,126 +276,21 @@ export default function ProjectsSection() {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* VIEW 1: Architectural Asymmetric Gallery */}
+            {/* VIEW 1: Architectural Asymmetric Gallery with In-Frame Parallax */}
             {viewMode === 'grid' && (
               <div className="space-y-24 sm:space-y-32">
-                {filteredProjects.map((project, index) => {
-                  const isEven = index % 2 === 0;
-
-                return (
-                  <motion.article
+                {filteredProjects.map((project, index) => (
+                  <ParallaxProjectCard
                     key={project.id}
-                    id={project.id}
-                    layout
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-50px' }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center group"
-                  >
-                    {/* Visual Imagery Column (7 cols) */}
-                    <div
-                      className={`lg:col-span-7 ${
-                        isEven ? 'lg:order-1' : 'lg:order-2'
-                      }`}
-                    >
-                      <div
-                        onClick={() => setSelectedProject(project)}
-                        className="relative overflow-hidden bg-brand-sand/40 border border-brand-hairline rounded-none cursor-pointer group"
-                      >
-                        {/* Corner markers */}
-                        <span className="absolute top-2 left-2 z-20 text-[10px] font-mono text-brand-black/40">+</span>
-                        <span className="absolute bottom-2 right-2 z-20 text-[10px] font-mono text-brand-black/40">+</span>
-
-                        <img
-                          src={project.imageUrl}
-                          alt={project.title}
-                          className="w-full h-[400px] sm:h-[500px] lg:h-[580px] object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
-                          loading="lazy"
-                        />
-
-                        {/* Top floating spec tag */}
-                        <div className="absolute top-4 left-4 bg-brand-bg/95 backdrop-blur-xs px-3.5 py-1.5 text-[10px] uppercase font-sans tracking-widest text-brand-black border border-brand-hairline">
-                          {project.category} · {project.area}
-                        </div>
-
-                        {/* Hover Quick View Trigger */}
-                        <div className="absolute inset-0 bg-brand-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          <span className="bg-brand-bg text-brand-black text-[11px] uppercase tracking-editorial px-5 py-2.5 border border-brand-black inline-flex items-center space-x-2 shadow-lg">
-                            <Maximize2 className="w-3.5 h-3.5 text-brand-clay" />
-                            <span>{language === 'fr' ? 'Ouvrir la monographie' : 'Open Monograph'}</span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Editorial Content Column (5 cols) */}
-                    <div
-                      className={`lg:col-span-5 ${
-                        isEven ? 'lg:order-2' : 'lg:order-1'
-                      } flex flex-col justify-center`}
-                    >
-                      {/* Project Index & Location */}
-                      <div className="flex items-center justify-between text-xs tracking-editorial uppercase text-brand-muted mb-3 font-sans">
-                        <span className="flex items-center space-x-1.5">
-                          <MapPin className="w-3 h-3 text-brand-clay" />
-                          <span>{project.location}</span>
-                        </span>
-                        <div className="flex items-center space-x-2 font-mono text-[11px]">
-                          {project.duration && (
-                            <span className="text-brand-clay font-medium">{project.duration} ·</span>
-                          )}
-                          <span className="text-brand-black">{project.area}</span>
-                        </div>
-                      </div>
-
-                      {/* Project Name */}
-                      <h3
-                        onClick={() => setSelectedProject(project)}
-                        className="font-serif text-2xl sm:text-3xl lg:text-4xl text-brand-black font-normal mb-4 leading-tight group-hover:text-brand-clay transition-colors duration-200 cursor-pointer"
-                      >
-                        {project.title}
-                      </h3>
-
-                      {/* Narrative Description */}
-                      <p className="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed mb-6">
-                        {project.description}
-                      </p>
-
-                      {/* Material Swatches list */}
-                      <div className="mb-8 pt-4 border-t border-brand-hairline">
-                        <p className="text-[10px] tracking-editorial uppercase text-brand-muted mb-3 font-medium">
-                          {language === 'fr' ? 'Matières & Finitions' : 'Materials & Finishes'}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.materials.map((mat, i) => (
-                            <span
-                              key={i}
-                              className="bg-brand-sand/40 border border-brand-hairline/80 px-2.5 py-1 text-[11px] text-brand-black font-light tracking-wide rounded-none"
-                            >
-                              {mat}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Action Button */}
-                      <div>
-                        <button
-                          type="button"
-                          onClick={() => setSelectedProject(project)}
-                          className="inline-flex items-center space-x-2 text-xs font-normal tracking-editorial uppercase text-brand-black border-b border-brand-black pb-1 hover:border-brand-clay hover:text-brand-clay transition-all duration-200 cursor-pointer"
-                        >
-                          <span>{t.viewProject}</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </button>
-                      </div>
-                    </div>
-                  </motion.article>
-                );
-              })}
-            </div>
-          )}
+                    project={project}
+                    isEven={index % 2 === 0}
+                    language={language}
+                    t={t}
+                    onSelect={setSelectedProject}
+                  />
+                ))}
+              </div>
+            )}
 
         {/* VIEW 2: Monograph Index List Table */}
         {viewMode === 'index' && (

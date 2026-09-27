@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT } from '@/data/content';
 import { MaterialSpecimen } from '@/types';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Sparkles, X, Info, Layers } from 'lucide-react';
 
 export default function MaterialInspector() {
@@ -12,8 +12,16 @@ export default function MaterialInspector() {
   const t = CONTENT[language].materials;
   const [selectedMaterial, setSelectedMaterial] = useState<MaterialSpecimen | null>(null);
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const textureY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
+
   return (
-    <section id="matieres" className="w-full bg-brand-sandLight/40 py-24 sm:py-32 border-b border-brand-hairline relative">
+    <section ref={sectionRef} id="matieres" className="w-full bg-brand-sandLight/40 py-24 sm:py-32 border-b border-brand-hairline relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* Section Header */}
@@ -51,18 +59,23 @@ export default function MaterialInspector() {
               className="border border-brand-hairline bg-brand-bg rounded-none overflow-hidden group hover:border-brand-black/50 transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md flex flex-col justify-between"
             >
               <div>
-                {/* Material Texture Image */}
+                {/* Material Texture Image with In-Frame Parallax */}
                 <div className="relative h-60 sm:h-64 overflow-hidden bg-brand-sand/50">
-                  <img
-                    src={mat.imageUrl}
-                    alt={mat.name}
-                    className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-brand-black/5 group-hover:opacity-0 transition-opacity duration-300" />
+                  <motion.div
+                    style={{ y: textureY, scale: 1.12 }}
+                    className="w-full h-full will-change-transform"
+                  >
+                    <img
+                      src={mat.imageUrl}
+                      alt={mat.name}
+                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                  <div className="absolute inset-0 bg-brand-black/5 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none" />
                   
                   {/* Floating spec pill */}
-                  <div className="absolute bottom-3 left-3 bg-brand-bg/95 px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider border border-brand-hairline text-brand-black">
+                  <div className="absolute bottom-3 left-3 bg-brand-bg/95 px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider border border-brand-hairline text-brand-black z-10">
                     N° 0{idx + 1}
                   </div>
                 </div>

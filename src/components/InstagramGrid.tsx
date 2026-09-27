@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT } from '@/data/content';
 import { SocialTile } from '@/types';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Instagram, ArrowUpRight, X, Maximize2, MapPin } from 'lucide-react';
 
 export default function InstagramGrid() {
@@ -12,8 +12,73 @@ export default function InstagramGrid() {
   const t = CONTENT[language].socialGrid;
   const [activeTile, setActiveTile] = useState<SocialTile | null>(null);
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  // 3-Column differential velocity parallax
+  const col1Y = useTransform(scrollYProgress, [0, 1], ['25px', '-35px']);
+  const col2Y = useTransform(scrollYProgress, [0, 1], ['-20px', '25px']);
+  const col3Y = useTransform(scrollYProgress, [0, 1], ['35px', '-20px']);
+
+  const col1 = [t.tiles[0], t.tiles[3], t.tiles[6]];
+  const col2 = [t.tiles[1], t.tiles[4], t.tiles[7]];
+  const col3 = [t.tiles[2], t.tiles[5], t.tiles[8]];
+
+  const renderTile = (tile: SocialTile, idx: number) => (
+    <motion.div
+      key={tile.id}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: (idx % 3) * 0.08 }}
+      onClick={() => setActiveTile(tile)}
+      className="relative aspect-square overflow-hidden bg-brand-sand/50 border border-brand-hairline group block cursor-pointer shadow-xs hover:shadow-md"
+    >
+      {/* Image */}
+      <img
+        src={tile.imageUrl}
+        alt={tile.caption}
+        className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+
+      {/* Top Sub-tag */}
+      <div className="absolute top-3 left-3 bg-brand-bg/90 px-2 py-0.5 text-[9px] uppercase font-mono tracking-wider text-brand-black border border-brand-hairline z-10">
+        0{tile.id} / 09
+      </div>
+
+      {/* Hover Dark Monograph Overlay */}
+      <div className="absolute inset-0 bg-brand-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-7 flex flex-col justify-between text-brand-bg z-20">
+        <div className="flex items-center justify-between text-[10px] tracking-editorial uppercase text-brand-sand/80 font-sans">
+          <span className="flex items-center space-x-1">
+            <MapPin className="w-3 h-3 text-brand-clay" />
+            <span>{tile.location}</span>
+          </span>
+          <Instagram className="w-4 h-4 text-brand-clay" />
+        </div>
+
+        <div>
+          <p className="font-serif text-sm sm:text-base text-brand-bg font-normal leading-relaxed mb-3">
+            {tile.caption}
+          </p>
+          <span className="font-sans text-[10px] tracking-widest text-brand-clay font-mono block">
+            {tile.tag}
+          </span>
+        </div>
+
+        <div className="flex items-center justify-between text-[10px] tracking-editorial uppercase text-brand-sand/90 pt-3 border-t border-brand-sand/20">
+          <span>{language === 'fr' ? 'Agrandir la photo' : 'Enlarge view'}</span>
+          <Maximize2 className="w-3.5 h-3.5 text-brand-clay" />
+        </div>
+      </div>
+    </motion.div>
+  );
+
   return (
-    <section className="w-full bg-brand-bg py-24 sm:py-32 border-b border-brand-hairline" id="journal">
+    <section ref={sectionRef} className="w-full bg-brand-bg py-24 sm:py-32 border-b border-brand-hairline overflow-hidden" id="journal">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* Section Header */}
@@ -55,57 +120,22 @@ export default function InstagramGrid() {
           </div>
         </div>
 
-        {/* 9 Tiles 3x3 Architectural Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {t.tiles.map((tile, idx) => (
-            <motion.div
-              key={tile.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.07 }}
-              onClick={() => setActiveTile(tile)}
-              className="relative aspect-square overflow-hidden bg-brand-sand/50 border border-brand-hairline group block cursor-pointer shadow-xs hover:shadow-md"
-            >
-              {/* Image */}
-              <img
-                src={tile.imageUrl}
-                alt={tile.caption}
-                className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
-                loading="lazy"
-              />
+        {/* Desktop: 3-Speed Multi-Column Floating Exhibition */}
+        <div className="hidden lg:grid grid-cols-3 gap-6 items-start">
+          <motion.div style={{ y: col1Y }} className="space-y-6 will-change-transform">
+            {col1.map((tile, i) => renderTile(tile, i))}
+          </motion.div>
+          <motion.div style={{ y: col2Y }} className="space-y-6 will-change-transform">
+            {col2.map((tile, i) => renderTile(tile, i))}
+          </motion.div>
+          <motion.div style={{ y: col3Y }} className="space-y-6 will-change-transform">
+            {col3.map((tile, i) => renderTile(tile, i))}
+          </motion.div>
+        </div>
 
-              {/* Top Sub-tag */}
-              <div className="absolute top-3 left-3 bg-brand-bg/90 px-2 py-0.5 text-[9px] uppercase font-mono tracking-wider text-brand-black border border-brand-hairline z-10">
-                0{tile.id} / 09
-              </div>
-
-              {/* Hover Dark Monograph Overlay */}
-              <div className="absolute inset-0 bg-brand-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-7 flex flex-col justify-between text-brand-bg z-20">
-                <div className="flex items-center justify-between text-[10px] tracking-editorial uppercase text-brand-sand/80 font-sans">
-                  <span className="flex items-center space-x-1">
-                    <MapPin className="w-3 h-3 text-brand-clay" />
-                    <span>{tile.location}</span>
-                  </span>
-                  <Instagram className="w-4 h-4 text-brand-clay" />
-                </div>
-
-                <div>
-                  <p className="font-serif text-sm sm:text-base text-brand-bg font-normal leading-relaxed mb-3">
-                    {tile.caption}
-                  </p>
-                  <span className="font-sans text-[10px] tracking-widest text-brand-clay font-mono block">
-                    {tile.tag}
-                  </span>
-                </div>
-
-                <div className="flex items-center justify-between text-[10px] tracking-editorial uppercase text-brand-sand/90 pt-3 border-t border-brand-sand/20">
-                  <span>Agrandir la photo</span>
-                  <Maximize2 className="w-3.5 h-3.5 text-brand-clay" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Mobile & Tablet: Standard Responsive Grid */}
+        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {t.tiles.map((tile, idx) => renderTile(tile, idx))}
         </div>
 
       </div>

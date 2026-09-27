@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT, BRAND_ASSETS } from '@/data/content';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Building2, Compass, CheckCircle2, ArrowRight, ShieldCheck, HeartHandshake, Sparkles, Clock, Check } from 'lucide-react';
 
 export default function StudioSection() {
@@ -11,6 +11,15 @@ export default function StudioSection() {
   const t = CONTENT[language].studio;
   const [activeTab, setActiveTab] = useState<'manifesto' | 'methodology' | 'values' | 'whyUs'>('manifesto');
   const [selectedStep, setSelectedStep] = useState<number>(0);
+
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const plateImgY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
+  const badgeFloatX = useTransform(scrollYProgress, [0, 1], ['12px', '-12px']);
 
   const tabs = [
     {
@@ -36,7 +45,7 @@ export default function StudioSection() {
   ];
 
   return (
-    <section id="studio" className="w-full bg-brand-bg py-24 sm:py-32 border-b border-brand-hairline relative">
+    <section ref={sectionRef} id="studio" className="w-full bg-brand-bg py-24 sm:py-32 border-b border-brand-hairline relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
 
         {/* Studio Monograph Datum Header */}
@@ -57,13 +66,16 @@ export default function StudioSection() {
           </div>
 
           {/* Architectural Technical Badge */}
-          <div className="hidden lg:flex items-center space-x-4 border border-brand-hairline px-4 py-2.5 bg-brand-sand/20 text-[10px] font-mono tracking-wider text-brand-black">
+          <motion.div
+            style={{ x: badgeFloatX }}
+            className="hidden lg:flex items-center space-x-4 border border-brand-hairline px-4 py-2.5 bg-brand-sand/20 text-[10px] font-mono tracking-wider text-brand-black will-change-transform"
+          >
             <Compass className="w-4 h-4 text-brand-clay" />
             <div>
               <div className="text-brand-black/90 font-medium">PARIS &amp; ÎLE-DE-FRANCE</div>
               <div className="text-brand-muted">NEUILLY · 8e · 9e · 16e · 17e</div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Interactive Architectural Tabs Bar with Moving Underline */}
@@ -155,13 +167,18 @@ export default function StudioSection() {
                 <div className="lg:col-span-6 space-y-4">
                   <div className="p-3 sm:p-4 bg-brand-sand/30 border border-brand-hairline">
                     <div className="relative aspect-[4/3] w-full overflow-hidden bg-brand-sand/50 border border-brand-hairline/80 group">
-                      <img
-                        src={BRAND_ASSETS.studioImage}
-                        alt="Wa.Design Paris Architecture Atelier"
-                        className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
-                        loading="lazy"
-                      />
-                      <div className="absolute top-3 left-3 bg-brand-bg/95 px-2.5 py-1 text-[9px] uppercase font-mono tracking-wider text-brand-black border border-brand-hairline">
+                      <motion.div
+                        style={{ y: plateImgY, scale: 1.12 }}
+                        className="w-full h-full will-change-transform"
+                      >
+                        <img
+                          src={BRAND_ASSETS.studioImage}
+                          alt="Wa.Design Paris Architecture Atelier"
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                          loading="lazy"
+                        />
+                      </motion.div>
+                      <div className="absolute top-3 left-3 bg-brand-bg/95 px-2.5 py-1 text-[9px] uppercase font-mono tracking-wider text-brand-black border border-brand-hairline z-10">
                         PL. 01 — ATELIER DE CONCEPTION
                       </div>
                     </div>

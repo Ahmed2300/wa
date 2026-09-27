@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT } from '@/data/content';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Check } from 'lucide-react';
 
 export default function ProjectStrip() {
@@ -10,11 +11,19 @@ export default function ProjectStrip() {
   const hero = CONTENT[language].hero;
   const strip = CONTENT[language].strip;
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const quoteY = useTransform(scrollYProgress, [0, 1], ['14px', '-14px']);
+
   return (
-    <section className="w-full border-y border-brand-hairline bg-brand-sand/20 py-12 sm:py-16" data-purpose="promise-section">
+    <section ref={sectionRef} className="w-full border-y border-brand-hairline bg-brand-sand/20 py-12 sm:py-16 overflow-hidden" data-purpose="promise-section">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
         
-        {/* Top Promesse Block */}
+        {/* Top Promesse Block with Optical Float */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
           <div className="lg:col-span-4">
             <div className="flex items-center space-x-3 mb-2">
@@ -28,11 +37,11 @@ export default function ProjectStrip() {
             </h3>
           </div>
 
-          <div className="lg:col-span-8">
+          <motion.div style={{ y: quoteY }} className="lg:col-span-8 will-change-transform">
             <p className="font-serif text-lg sm:text-xl lg:text-2xl text-brand-black/90 font-normal italic leading-relaxed">
               &laquo;&nbsp;{hero.promise}&nbsp;&raquo;
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* 5 Pillars: Pourquoi Wa.Design ? */}

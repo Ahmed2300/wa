@@ -1,0 +1,9 @@
+feat: implement editorial architectural parallax across key sections
+
+- HeroSection: Added cinematic in-frame lens optical parallax and headline float
+- ProjectsSection: Implemented ParallaxProjectCard with in-frame photo travel and differential editorial text drift
+- InstagramGrid: Created 3-speed multi-column floating gallery with responsive fallback
+- StudioSection: Added museum archival plate in-frame parallax and coordinate drift
+- MaterialInspector: Added tactile texture depth parallax to marble, oak, limestone swatches
+- ProjectStrip: Added floating quote baseline elevation
+- Verified 60fps hardware-accelerated transforms in harmony with Lenis smooth scroll engine

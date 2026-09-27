@@ -1,17 +1,30 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT, BRAND_ASSETS } from '@/data/content';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 
 export default function HeroSection() {
   const { language } = useLanguage();
   const t = CONTENT[language].hero;
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  // Subtle optical lens parallax
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.06, 1.0]);
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-8%']);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.35]);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="hero-heading"
       className="w-full relative bg-brand-bg pt-6 sm:pt-10 pb-14 sm:pb-20 overflow-hidden"
     >
@@ -40,13 +53,18 @@ export default function HeroSection() {
             </span>
           </div>
 
-          <img
-            src={BRAND_ASSETS.heroImage}
-            alt="Interior Architecture Parisian Luxury Apartment"
-            className="w-full h-[54vh] sm:h-[68vh] lg:h-[76vh] object-cover object-center block transition-transform duration-1000 ease-out group-hover:scale-[1.018]"
-            loading="eager"
-            decoding="async"
-          />
+          <motion.div
+            style={{ y: imageY, scale: imageScale }}
+            className="w-full h-full will-change-transform"
+          >
+            <img
+              src={BRAND_ASSETS.heroImage}
+              alt="Interior Architecture Parisian Luxury Apartment"
+              className="w-full h-[54vh] sm:h-[68vh] lg:h-[76vh] object-cover object-center block"
+              loading="eager"
+              decoding="async"
+            />
+          </motion.div>
 
           {/* Subtle architectural vignette overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-brand-black/25 via-transparent to-transparent pointer-events-none" />
@@ -58,8 +76,11 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Hero Typographic & Editorial Block */}
-        <div className="pt-10 sm:pt-16 lg:pt-20 pb-4 max-w-4xl">
+        {/* Hero Typographic & Editorial Block with Subtle Parallax Float */}
+        <motion.div
+          style={{ y: textY, opacity: textOpacity }}
+          className="pt-10 sm:pt-16 lg:pt-20 pb-4 max-w-4xl will-change-transform"
+        >
           {/* Eyebrow Subtitle with Architectural Badge */}
           <motion.div
             key={`eyebrow-${language}`}
@@ -127,7 +148,7 @@ export default function HeroSection() {
               <ArrowDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-1" />
             </a>
           </motion.div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
