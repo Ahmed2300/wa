@@ -22,6 +22,15 @@ const sansFont = Plus_Jakarta_Sans({
   display: 'swap',
 });
 
+const getBaseUrl = (): string => {
+  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return 'https://wa-delta-umber.vercel.app';
+};
+
+const baseUrl = getBaseUrl();
+
 export const viewport: Viewport = {
   themeColor: '#080808',
   width: 'device-width',
@@ -30,7 +39,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wadesign.fr'),
+  metadataBase: new URL(baseUrl),
   title: 'WA Design France — Rénovation d’Appartements de Luxe Paris',
   description:
     'Rénovez votre appartement avec élégance et précision. Wa.Design transforme vos espaces de vie en lieux d’exception à Paris et en Île-de-France. Du premier croquis à la remise des clés.',
@@ -51,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://wadesign.fr',
+    url: baseUrl,
     siteName: 'WA Design France',
     title: 'WA Design France — Rénovation d’Appartements de Luxe Paris',
     description:
@@ -59,6 +68,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/og-image.jpg',
+        secureUrl: `${baseUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: 'WA Design France — Rénovation d’Appartements de Luxe Paris',
@@ -71,7 +81,7 @@ export const metadata: Metadata = {
     title: 'WA Design France — Rénovation d’Appartements de Luxe Paris',
     description:
       'Rénovez votre appartement avec élégance et précision. Spécialistes de la rénovation d’appartements luxueux à Paris et en Île-de-France.',
-    images: ['/og-image.jpg'],
+    images: [`${baseUrl}/og-image.jpg`],
     creator: '@wadesignfrance',
   },
   icons: {
@@ -93,6 +103,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${ebGaramond.variable} ${sansFont.variable} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <link rel="image_src" href={`${baseUrl}/og-image.jpg`} />
+        <meta property="og:image:secure_url" content={`${baseUrl}/og-image.jpg`} />
+      </head>
       <body className="bg-brand-bg text-brand-black min-h-screen antialiased selection:bg-brand-sand relative" suppressHydrationWarning>
         <LanguageProvider>
           <PageTransition />
