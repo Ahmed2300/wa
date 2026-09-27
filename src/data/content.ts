@@ -1,11 +1,16 @@
 import { Project, ServiceItem, StudioStep, MaterialSpecimen, SocialTile } from '@/types';
 
 export const BRAND_ASSETS = {
-  // Official Wordmark SVG/PNG from Stitch
+  // Official Wordmark SVG/PNG
   wordmark: "https://lh3.googleusercontent.com/aida-public/AB6AXuC_khzKFZGLlG_y9IU85606kI4T4QT2MVO-WBI5GpXvkdpikqIBzx9ilep2b-9Ze85jtT38yZ5OweWWivxqAlhR1nrs4gL8uRs_Dtaqal1KF2zmax-8rmlL5rwUp5s3iUv2XKY-tE6htpxgi8OzAQFXCCKqmESf0RIK9v9wqJWBEW2Kq7rYDkdVuVvGs5er_wLtgTYamRgE5K1n6c9Cfrenkkn243N5Uo7Z-rWl8ZjawlAVZhoC_9YNJ0OqNii6Zl24vQ",
+  // High-Res Hero Image
   heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVi5ap24Wn6VkYm_Sc5n5SsykQa9fbuxsp_iZwxaH3R3VKZYwoGgu2CQtSIYBSXOUYuA1ynHrRH51ce9O3ZPB2D0SQD8Wg5wwEIxJEtZylvc6GHu3fZL9jQGsg9tpaEQ-czCzk7cnVccGkYpa-p8oLgvsPSQj5Er0x33H5o2FidHeqHGt0Y6G6UjDMb7ZNciZOTeuZFFRu8wJd2AmD2NYkzZva6kfvwvp1rqWJkJYNXbskMRFaclH",
-  studioImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDepriQl0aJ4A3QTUGqOEgUQ1QFvkK52BfcKpaaJvV-EcudFhtMu_XeN4qON0nu8KUhurqqOgrCHTBvzDEJ3Jwg_sEsUjXA4tVuiLICf38dCxsVKPs9_cuxunAtfyyfXfkXfoUh4VnF9qSNBd-PsnmBMULP3q-ANbCxRS5Cy2OFp7BCIUDiRSIJm1iRKL4DLZbyNJ1Wr5onUJfQx5FDYH_WGGnqSebksupOkyc5H5HTlKU_ki9gj9wt",
-  contactImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBcZlR-41Rt9CRKqbh50yLMByGHoo1-e1s2tD12N3K6Z5hB78e1o0",
+  // High-Res Sunlit Parisian Studio Atelier
+  studioImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxkdeUQwIUloH6Kx2Rc3s43nKrniaGSJMnaChiB973lsRQcZdcwb71SQArlSXvfQhlrw1tXl0i4O1LJa4CFRSgze7YmEZeknwndddQeJO68F5RdBl4Q8Xhbpr48yrkDCrhj18feiKeh7wyrsUGGUkX6He8Ukl7Ryn9oCC_kyrtO85SQmyUj-VZvcsL9smfAyxa06dcJO_aC0l0yrq1OkHtxj_TDyNQ-1Rky-6YyTaZKBXXu4aT87Hg",
+  // High-Res Contact Atelier Photography
+  contactImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuACOtuyVNWoOkx-Gxa5DY3t7UOrtBfDyPsDuVUk0gTN-_mO2DygkJ2sEpEWAI1CwdTmD5-ybKOzMSmk3yB7srLWyMOOVERB_p0f1PUkxLmsFCOLXAgBiPKnAduW0ahI8MNlQmoMP0n6Rt7G-a4to9Xhxoc8mfMgBEjvufCVVS2fUFZB62EGz2WIKW4tJo7r247taDXiQFF8p_U0x5GghaHyV9DLHyAD0S87V2v4xd57Q_-n17269_1E",
+  // Monogram seal
+  monogramImage: "https://lh3.googleusercontent.com/aida/AEtjO1UCetHyuTpzpJyU7-9ixWbyxiW-aKRlbJZGzxyv8XJcxSTj1V0zbzTan74oOCbj3x5y9ly8LwnczHuYmj5SoYXPdZsOCOgtLWSC09cymsEcuyHBPPmES-FV-gspqzAsQApCzU-xXn6h8uQAufukJwycSO5sontsTIrPjktvJnxIKPMd2_x59bFckQoaaOo0tj5bmiL-ZpNvy3_-qVFXyBkR9VZwrs1h5WSUizAgvcjoMmQar9f6oYjyfw"
 };
 
 export const CONTENT = {
@@ -128,30 +133,34 @@ export const CONTENT = {
           title: "Rénovation Complète",
           subtitle: "Restructuration totale & gros œuvre",
           description: "Dépose intégrale, renforcement de planchers bois, modification de cloisons porteuses, mise aux normes thermiques et acoustiques d'exception.",
-          deliverables: ["Diagnostic structurel", "Coordination corps d'état", "Assurance décennale", "Livraison sans réserve"]
+          deliverables: ["Diagnostic structurel", "Coordination corps d'état", "Assurance décennale", "Livraison sans réserve"],
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2CCP9522LM9rTVWdyiMwMtkKNVpz4koTqZSNLvQN9tjiEY25rvFtdquDGNnQ8ttlZ8j1pJNd7dLbm84pu6DcToVZ_EKHYCk_16knOB3VWE12uoMdrqNL6euj3_9pYB_DP3aFOgzlrWwf7mbXJ4H3DWKDOGG-8OTD46xiF5m9bFPrhygrXow4WXKwJxUrzEy7IXjXsw87KvSbQuoQwKiJGW07Lh9VYnOBvB8jee_ljpEPC7XtJwN0"
         },
         {
           number: "02",
           title: "Architecture d'Intérieur",
           subtitle: "Zonage spatial & lumière",
           description: "Création de perspectives épurées, optimisation des circulations, intégration de verrières d'acier et dessin d'éclairages architecturaux invisibles.",
-          deliverables: ["Plans d'exécution 1:20", "Étude lumino-technique", "Planches de matières", "Vues immersives"]
+          deliverables: ["Plans d'exécution 1:20", "Étude lumino-technique", "Planches de matières", "Vues immersives"],
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuABAXe16Zck3J_LzBdHinRfj465Y9StCtCMABUbiYda0-zdmerIcVTOPOfNY7uwLucnvy2-ib-10TQLPR28oz7x2yDGPseFDeRAoUhwA9cCvc8k2G6CvSFk8Q49JkSBQH3K1N3UaXalQkFSPOWE9pPFPRRwAeMUgPzcl7FSKClUIx34ZFpOujlUtDNDuBOg1J04FtuU_MsOdRMPo2kVua37Z0aqxJkr7_fOFJzaUwN0UQYk9tN-rghg"
         },
         {
           number: "03",
           title: "Menuiserie & Agencement Sur-Mesure",
           subtitle: "Mobilier intégré de haute précision",
           description: "Dessin et fabrication de dressings invisibles, bibliothèques monumentales, îlots en pierre massive et portes dérobées affleurantes.",
-          deliverables: ["Ébénisterie d'art", "Calepinage de pierre", "Quincaillerie en laiton massif", "Pose au millimètre"]
+          deliverables: ["Ébénisterie d'art", "Calepinage de pierre", "Quincaillerie en laiton massif", "Pose au millimètre"],
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDd9WF6IED3_rBy63dwt6hJY5vorV6cyZV2pgj9h709VT53TWTNH4xYbdods0VFpc3wRgYvIdE9tFtspRVeTxYbYpcCdpONOdZMESr_45P-IFB9-xl1Whi0i03FsP-DPEzJ0V7HjHbkMqgo38qILRWjyPJ_K3uFFhEQSahfxuQOo2NpTHjdH-RiFxUodKo0aEQ9Gdi1i1AzX1AJtmrefL1whA3u8936UY9RDn1HB9F_OJSs33DKkl-5"
         },
         {
           number: "04",
           title: "Sourcing & Direction Artistique",
           subtitle: "Sélection d'antiquités & design",
           description: "Recherche de pièces de collection, textiles en lin brut, luminaires d'architectes et mobilier iconique en harmonie avec les volumes du lieu.",
-          deliverables: ["Carnet d'acquisitions", "Accompagnement galeries", "Finitions sur-mesure", "Mise en scène finale"]
+          deliverables: ["Carnet d'acquisitions", "Accompagnement galeries", "Finitions sur-mesure", "Mise en scène finale"],
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiv3Koqq4SsNWcYZRdYaVq8V700-QMA71z0N72s2XGt4oPdnqXgmuS6yqXW5m930D3D2yjz5KYA3bm0L0T-pcciXmYhbHBGolDc6ZrEfiNq_POf19KE5zhnzVHFKjSu-k6O3-Ps1RjPLmcVblLk7nDl8CdtyLAjUva5F2geFBpIrz8v-VxC85GblgMrqt4pedt0fdlyqyIg-9rjRLtcT7hs62wwLCDRRWXDxD68p-ADqc-Wk5ir3ff"
         }
-      ] as ServiceItem[]
+      ] as (ServiceItem & { imageUrl: string })[]
     },
     materials: {
       eyebrow: "PALETTE TACTILE",
@@ -233,31 +242,31 @@ export const CONTENT = {
         },
         {
           id: 6,
-          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAHevmbIglI2LAWD7H_0pEjTtEPpLvemTN4033pHXve35It76uA24jqmOaqXRAmWWa97d2zFZYbzVVP6QC4Sfrm4oSGuCyqdH14dAm-tNUfW9Zyderhql5KV2LC28rzJtkdWgAZVKFYbwq2n4fXABlP_biFoJdZB-r7x4qZuWSskIuRpmI0HN7hcg3FMWS5l2wRWDa-TiQVQ8TKk8VvaY-qVnqcFZuGNwZETTeqDr0HkpBKUbuKX0Qu",
-          caption: "Poignée de tirage façonnée en bronze brut patiné à chaud.",
-          tag: "#DétailArchitectural",
-          location: "Atelier de Fonderie"
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-xesGI6YBFSabEqVdWVgopLlKaceHBuzx8zvGz0-74GQJItq1B_u3KW7wZ_RHIImLnqfxQdhDgiWnDLnq4sZB4HgyF6eWYdc_3qGYt6lEiwheUcYp9xGg3SaqAqUle_Srnb-shd1Krq8PHEfx6WtPHqh-mk2HukaHsvpdHOqIS9ZZLyD2s0H9mDTJTUAy2fRVLjbmW4dySKwi7W8YalvDrV4cLJrFASkNfEVQU1JMC9OoRXBQMC-c",
+          caption: "Détail de ferronnerie : poignée de porte en bronze massif patiné au feu.",
+          tag: "#BronzePatine",
+          location: "Quartier Latin"
         },
         {
           id: 7,
-          imageUrl: "https://lh3.googleusercontent.com/aida/AEtjO1VfAG7CvceNc8X9ef1cVqZznST0O1Rc0FPuQUg-Sgdg3ca4dm3vBssoVf_PLWz_1t6defW4VVPQZyNW1QT4UYNxv0M_xpMLeSRQKYdouSWkrFt3KOo0pDoAp6-K8h7g9xiJAQAWK2qtpNBTSMLw5yEGk6Suxy1cX6f8WilbDqnXLBFvVaTL0tlzpKh-A-PLHERsrUBZOlFeTS_3P3e0T0UlrOTczhR4lj_TkmwgPoqJZmjQe15wdtvQqhI",
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2CCP9522LM9rTVWdyiMwMtkKNVpz4koTqZSNLvQN9tjiEY25rvFtdquDGNnQ8ttlZ8j1pJNd7dLbm84pu6DcToVZ_EKHYCk_16knOB3VWE12uoMdrqNL6euj3_9pYB_DP3aFOgzlrWwf7mbXJ4H3DWKDOGG-8OTD46xiF5m9bFPrhygrXow4WXKwJxUrzEy7IXjXsw87KvSbQuoQwKiJGW07Lh9VYnOBvB8jee_ljpEPC7XtJwN0",
           caption: "Les teintes de sable et de chaux : l'harmonie minérale de nos chantiers.",
           tag: "#ChantierParis",
           location: "Paris VIIe"
         },
         {
           id: 8,
-          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDepriQl0aJ4A3QTUGqOEgUQ1QFvkK52BfcKpaaJvV-EcudFhtMu_XeN4qON0nu8KUhurqqOgrCHTBvzDEJ3Jwg_sEsUjXA4tVuiLICf38dCxsVKPs9_cuxunAtfyyfXfkXfoUh4VnF9qSNBd-PsnmBMULP3q-ANbCxRS5Cy2OFp7BCIUDiRSIJm1iRKL4DLZbyNJ1Wr5onUJfQx5FDYH_WGGnqSebksupOkyc5H5HTlKU_ki9gj9wt",
-          caption: "Élévation zénithale : quand la lumière devient matière constructive.",
-          tag: "#ArchitectureInterieure",
-          location: "Saint-Thomas d'Aquin"
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxkdeUQwIUloH6Kx2Rc3s43nKrniaGSJMnaChiB973lsRQcZdcwb71SQArlSXvfQhlrw1tXl0i4O1LJa4CFRSgze7YmEZeknwndddQeJO68F5RdBl4Q8Xhbpr48yrkDCrhj18feiKeh7wyrsUGGUkX6He8Ukl7Ryn9oCC_kyrtO85SQmyUj-VZvcsL9smfAyxa06dcJO_aC0l0yrq1OkHtxj_TDyNQ-1Rky-6YyTaZKBXXu4aT87Hg",
+          caption: "L'Atelier d'Architecture : planches de matières et calepinage.",
+          tag: "#AtelierArchitecture",
+          location: "Paris VIe"
         },
         {
           id: 9,
-          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDRp_7KV7_hz-SaT8VUkdxdNvhzaD22ybIBgODssxD5p8gMMLjDMLgU80qP-pQFADTanTuxgOm1G9RUW-KGC3Pe-79RH1KtEatFQNk6oXpNwUV7SWJAF5htQuE7lHTP0a5EYW0D5eiTHl_16BhFoHghejJtcj_cYJk7Hq2-voB43JhJF94M4h4qB-zDp-MhbX5ByEm1J3SvY4RWJkeQMd8iXH6Up18jKWEbJ0iDEkc4u64v3E11yQS8",
-          caption: "Archives de l'atelier : carnets de calepinage et relevés de moulures.",
-          tag: "#AtelierWADesign",
-          location: "Paris VIe"
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBbq-uKe3W7gP3sVpv3UCx4mwmXmMw6pQonXn8F5ZjtwHNHn0WMyEUiXlwxjM59zoy3Jbs17DV8KPtVgycG43eo6d_Xicdpg59ek9VMipSRKMbELk_e3NKfg5-o1CBDxcvkt4umiD9ptza8MPJYW-VQCFBb6FGiMbcZ5aepMbX8GVbLg9XvwGT2of783_fv5fZksmQu3OHrALLqkkT7OASMGMfmpFUuvs0BrrhtcAh6HSSPfEeRW7Ys",
+          caption: "Grain de la pierre de taille parisienne sous la lumière douce du matin.",
+          tag: "#PierreDeTaille",
+          location: "Paris IVe"
         }
       ] as SocialTile[]
     },
@@ -422,30 +431,34 @@ export const CONTENT = {
           title: "Complete Renovation",
           subtitle: "Full restructuring & structural works",
           description: "Full strip-out, wooden floor reinforcement, load-bearing partition alterations, and acoustic/thermal isolation engineered to modern museum standards.",
-          deliverables: ["Structural diagnostic", "Trade contractor supervision", "Ten-year guarantee coverage", "Zero-defect delivery"]
+          deliverables: ["Structural diagnostic", "Trade contractor supervision", "Ten-year guarantee coverage", "Zero-defect delivery"],
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2CCP9522LM9rTVWdyiMwMtkKNVpz4koTqZSNLvQN9tjiEY25rvFtdquDGNnQ8ttlZ8j1pJNd7dLbm84pu6DcToVZ_EKHYCk_16knOB3VWE12uoMdrqNL6euj3_9pYB_DP3aFOgzlrWwf7mbXJ4H3DWKDOGG-8OTD46xiF5m9bFPrhygrXow4WXKwJxUrzEy7IXjXsw87KvSbQuoQwKiJGW07Lh9VYnOBvB8jee_ljpEPC7XtJwN0"
         },
         {
           number: "02",
           title: "Interior Architecture",
           subtitle: "Spatial zoning & lighting architecture",
           description: "Sculpting uncluttered sightlines, optimizing circulation flow, incorporating bespoke steel partitions, and designing concealed architectural lighting fixtures.",
-          deliverables: ["1:20 detailed execution plans", "Lighting & ambiance study", "Material swatch books", "Photorealistic rendering"]
+          deliverables: ["1:20 detailed execution plans", "Lighting & ambiance study", "Material swatch books", "Photorealistic rendering"],
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuABAXe16Zck3J_LzBdHinRfj465Y9StCtCMABUbiYda0-zdmerIcVTOPOfNY7uwLucnvy2-ib-10TQLPR28oz7x2yDGPseFDeRAoUhwA9cCvc8k2G6CvSFk8Q49JkSBQH3K1N3UaXalQkFSPOWE9pPFPRRwAeMUgPzcl7FSKClUIx34ZFpOujlUtDNDuBOg1J04FtuU_MsOdRMPo2kVua37Z0aqxJkr7_fOFJzaUwN0UQYk9tN-rghg"
         },
         {
           number: "03",
           title: "Custom Joinery & Millwork",
           subtitle: "High-precision integrated furniture",
           description: "Design and creation of concealed dressing rooms, monolithic stone islands, library galleries, and flush concealed doors with zero visible trims.",
-          deliverables: ["Master cabinetmaking", "Stone vein calepinage", "Solid brass bespoke hardware", "Millimetric on-site installation"]
+          deliverables: ["Master cabinetmaking", "Stone vein calepinage", "Solid brass bespoke hardware", "Millimetric on-site installation"],
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDd9WF6IED3_rBy63dwt6hJY5vorV6cyZV2pgj9h709VT53TWTNH4xYbdods0VFpc3wRgYvIdE9tFtspRVeTxYbYpcCdpONOdZMESr_45P-IFB9-xl1Whi0i03FsP-DPEzJ0V7HjHbkMqgo38qILRWjyPJ_K3uFFhEQSahfxuQOo2NpTHjdH-RiFxUodKo0aEQ9Gdi1i1AzX1AJtmrefL1whA3u8936UY9RDn1HB9F_OJSs33DKkl-5"
         },
         {
           number: "04",
           title: "Sourcing & Art Direction",
           subtitle: "Curation of antiques & collectible design",
           description: "Searching for rare mid-century masterworks, textured Belgian linens, collectible architect-designed luminaires, and bespoke upholstered pieces.",
-          deliverables: ["Acquisition dossier", "Private gallery accompaniment", "Bespoke textile finishes", "Final editorial styling"]
+          deliverables: ["Acquisition dossier", "Private gallery accompaniment", "Bespoke textile finishes", "Final editorial styling"],
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiv3Koqq4SsNWcYZRdYaVq8V700-QMA71z0N72s2XGt4oPdnqXgmuS6yqXW5m930D3D2yjz5KYA3bm0L0T-pcciXmYhbHBGolDc6ZrEfiNq_POf19KE5zhnzVHFKjSu-k6O3-Ps1RjPLmcVblLk7nDl8CdtyLAjUva5F2geFBpIrz8v-VxC85GblgMrqt4pedt0fdlyqyIg-9rjRLtcT7hs62wwLCDRRWXDxD68p-ADqc-Wk5ir3ff"
         }
-      ] as ServiceItem[]
+      ] as (ServiceItem & { imageUrl: string })[]
     },
     materials: {
       eyebrow: "TACTILE PALETTE",
@@ -527,31 +540,31 @@ export const CONTENT = {
         },
         {
           id: 6,
-          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAHevmbIglI2LAWD7H_0pEjTtEPpLvemTN4033pHXve35It76uA24jqmOaqXRAmWWa97d2zFZYbzVVP6QC4Sfrm4oSGuCyqdH14dAm-tNUfW9Zyderhql5KV2LC28rzJtkdWgAZVKFYbwq2n4fXABlP_biFoJdZB-r7x4qZuWSskIuRpmI0HN7hcg3FMWS5l2wRWDa-TiQVQ8TKk8VvaY-qVnqcFZuGNwZETTeqDr0HkpBKUbuKX0Qu",
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-xesGI6YBFSabEqVdWVgopLlKaceHBuzx8zvGz0-74GQJItq1B_u3KW7wZ_RHIImLnqfxQdhDgiWnDLnq4sZB4HgyF6eWYdc_3qGYt6lEiwheUcYp9xGg3SaqAqUle_Srnb-shd1Krq8PHEfx6WtPHqh-mk2HukaHsvpdHOqIS9ZZLyD2s0H9mDTJTUAy2fRVLjbmW4dySKwi7W8YalvDrV4cLJrFASkNfEVQU1JMC9OoRXBQMC-c",
           caption: "Architectural pull handle forged in flame-patinated raw bronze.",
           tag: "#ArchitecturalDetail",
           location: "Foundry Atelier"
         },
         {
           id: 7,
-          imageUrl: "https://lh3.googleusercontent.com/aida/AEtjO1VfAG7CvceNc8X9ef1cVqZznST0O1Rc0FPuQUg-Sgdg3ca4dm3vBssoVf_PLWz_1t6defW4VVPQZyNW1QT4UYNxv0M_xpMLeSRQKYdouSWkrFt3KOo0pDoAp6-K8h7g9xiJAQAWK2qtpNBTSMLw5yEGk6Suxy1cX6f8WilbDqnXLBFvVaTL0tlzpKh-A-PLHERsrUBZOlFeTS_3P3e0T0UlrOTczhR4lj_TkmwgPoqJZmjQe15wdtvQqhI",
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2CCP9522LM9rTVWdyiMwMtkKNVpz4koTqZSNLvQN9tjiEY25rvFtdquDGNnQ8ttlZ8j1pJNd7dLbm84pu6DcToVZ_EKHYCk_16knOB3VWE12uoMdrqNL6euj3_9pYB_DP3aFOgzlrWwf7mbXJ4H3DWKDOGG-8OTD46xiF5m9bFPrhygrXow4WXKwJxUrzEy7IXjXsw87KvSbQuoQwKiJGW07Lh9VYnOBvB8jee_ljpEPC7XtJwN0",
           caption: "Hues of warm sand and lime plaster: mineral tranquility in the making.",
           tag: "#ParisRenovation",
           location: "Paris 7th"
         },
         {
           id: 8,
-          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDepriQl0aJ4A3QTUGqOEgUQ1QFvkK52BfcKpaaJvV-EcudFhtMu_XeN4qON0nu8KUhurqqOgrCHTBvzDEJ3Jwg_sEsUjXA4tVuiLICf38dCxsVKPs9_cuxunAtfyyfXfkXfoUh4VnF9qSNBd-PsnmBMULP3q-ANbCxRS5Cy2OFp7BCIUDiRSIJm1iRKL4DLZbyNJ1Wr5onUJfQx5FDYH_WGGnqSebksupOkyc5H5HTlKU_ki9gj9wt",
-          caption: "Overhead elevation: where daylight becomes constructive matter.",
-          tag: "#InteriorArchitecture",
-          location: "Saint-Thomas d'Aquin"
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxkdeUQwIUloH6Kx2Rc3s43nKrniaGSJMnaChiB973lsRQcZdcwb71SQArlSXvfQhlrw1tXl0i4O1LJa4CFRSgze7YmEZeknwndddQeJO68F5RdBl4Q8Xhbpr48yrkDCrhj18feiKeh7wyrsUGGUkX6He8Ukl7Ryn9oCC_kyrtO85SQmyUj-VZvcsL9smfAyxa06dcJO_aC0l0yrq1OkHtxj_TDyNQ-1Rky-6YyTaZKBXXu4aT87Hg",
+          caption: "Atelier architecture drawing board and material library.",
+          tag: "#ArchitectureAtelier",
+          location: "Paris 6th"
         },
         {
           id: 9,
-          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDRp_7KV7_hz-SaT8VUkdxdNvhzaD22ybIBgODssxD5p8gMMLjDMLgU80qP-pQFADTanTuxgOm1G9RUW-KGC3Pe-79RH1KtEatFQNk6oXpNwUV7SWJAF5htQuE7lHTP0a5EYW0D5eiTHl_16BhFoHghejJtcj_cYJk7Hq2-voB43JhJF94M4h4qB-zDp-MhbX5ByEm1J3SvY4RWJkeQMd8iXH6Up18jKWEbJ0iDEkc4u64v3E11yQS8",
-          caption: "Atelier archives: stone layout blueprints and classical molding surveys.",
-          tag: "#AtelierWADesign",
-          location: "Paris 6th"
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBbq-uKe3W7gP3sVpv3UCx4mwmXmMw6pQonXn8F5ZjtwHNHn0WMyEUiXlwxjM59zoy3Jbs17DV8KPtVgycG43eo6d_Xicdpg59ek9VMipSRKMbELk_e3NKfg5-o1CBDxcvkt4umiD9ptza8MPJYW-VQCFBb6FGiMbcZ5aepMbX8GVbLg9XvwGT2of783_fv5fZksmQu3OHrALLqkkT7OASMGMfmpFUuvs0BrrhtcAh6HSSPfEeRW7Ys",
+          caption: "Grain of Parisian limestone under the morning sun.",
+          tag: "#LimestoneTexture",
+          location: "Paris 4th"
         }
       ] as SocialTile[]
     },

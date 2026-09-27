@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { CONTENT } from '@/data/content';
+import { CONTENT, BRAND_ASSETS } from '@/data/content';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, CheckCircle2, Shield, CalendarDays } from 'lucide-react';
 
@@ -30,7 +30,7 @@ export default function ContactSection() {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
-          {/* Left Column: Studio Information & Coordinates */}
+          {/* Left Column: Studio Information & Coordinates with Atelier Imagery */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <div className="flex items-center space-x-3 mb-3">
@@ -43,56 +43,73 @@ export default function ContactSection() {
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-5">
                 {t.title}
               </h2>
-              <p className="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed mb-10">
+              <p className="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed mb-8">
                 {t.subtitle}
               </p>
 
-              {/* Atelier Details Card */}
-              <div className="bg-brand-bg border border-brand-hairline p-8 space-y-6 shadow-xs">
-                <div>
-                  <div className="flex items-center space-x-2 text-xs font-sans tracking-editorial uppercase text-brand-black font-medium mb-1">
-                    <MapPin className="w-3.5 h-3.5 text-brand-clay" />
-                    <span>{t.atelierDetails.title}</span>
-                  </div>
-                  <p className="text-base font-serif text-brand-black">
-                    {t.atelierDetails.addressLine1}
-                  </p>
-                  <p className="text-xs font-sans text-brand-muted">
-                    {t.atelierDetails.addressLine2}
-                  </p>
-                  <p className="text-[11px] font-sans text-brand-clay italic mt-1 font-light">
-                    {t.atelierDetails.notes}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-brand-hairline space-y-3.5 text-xs font-sans">
-                  <div className="flex items-center space-x-3 text-brand-black">
-                    <Mail className="w-3.5 h-3.5 text-brand-muted" />
-                    <a href={`mailto:${t.atelierDetails.email}`} className="hover:text-brand-clay transition-colors">
-                      {t.atelierDetails.email}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3 text-brand-black">
-                    <Phone className="w-3.5 h-3.5 text-brand-muted" />
-                    <a href={`tel:${t.atelierDetails.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-brand-clay transition-colors">
-                      {t.atelierDetails.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3 text-brand-muted">
-                    <Clock className="w-3.5 h-3.5 text-brand-muted" />
-                    <span>{t.atelierDetails.hours}</span>
+              {/* Atelier Details Card with High-Res Photography */}
+              <div className="bg-brand-bg border border-brand-hairline overflow-hidden shadow-xs">
+                
+                {/* High-Resolution Atelier Photo */}
+                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-brand-sand/50 group">
+                  <img
+                    src={BRAND_ASSETS.contactImage}
+                    alt="WA Design France Atelier Paris 6e"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute bottom-3 left-3 bg-brand-bg/95 px-2.5 py-1 text-[9px] uppercase font-mono tracking-wider text-brand-black border border-brand-hairline">
+                    ATELIER PRIVÉ · PARIS VIe
                   </div>
                 </div>
 
-                {/* Lead Time indicator */}
-                <div className="pt-4 border-t border-brand-hairline flex items-center space-x-2.5 text-[11px] text-brand-muted font-sans">
-                  <CalendarDays className="w-3.5 h-3.5 text-brand-clay" />
-                  <span>
-                    {language === 'fr'
-                      ? 'Délai moyen d’étude & diagnostic : 10 jours ouvrés'
-                      : 'Average audit & diagnostic window: 10 business days'}
-                  </span>
+                <div className="p-7 space-y-6">
+                  <div>
+                    <div className="flex items-center space-x-2 text-xs font-sans tracking-editorial uppercase text-brand-black font-medium mb-1">
+                      <MapPin className="w-3.5 h-3.5 text-brand-clay" />
+                      <span>{t.atelierDetails.title}</span>
+                    </div>
+                    <p className="text-base font-serif text-brand-black">
+                      {t.atelierDetails.addressLine1}
+                    </p>
+                    <p className="text-xs font-sans text-brand-muted">
+                      {t.atelierDetails.addressLine2}
+                    </p>
+                    <p className="text-[11px] font-sans text-brand-clay italic mt-1 font-light">
+                      {t.atelierDetails.notes}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-brand-hairline space-y-3.5 text-xs font-sans">
+                    <div className="flex items-center space-x-3 text-brand-black">
+                      <Mail className="w-3.5 h-3.5 text-brand-muted" />
+                      <a href={`mailto:${t.atelierDetails.email}`} className="hover:text-brand-clay transition-colors">
+                        {t.atelierDetails.email}
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3 text-brand-black">
+                      <Phone className="w-3.5 h-3.5 text-brand-muted" />
+                      <a href={`tel:${t.atelierDetails.phone.replace(/[^0-9+]/g, '')}`} className="hover:text-brand-clay transition-colors">
+                        {t.atelierDetails.phone}
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3 text-brand-muted">
+                      <Clock className="w-3.5 h-3.5 text-brand-muted" />
+                      <span>{t.atelierDetails.hours}</span>
+                    </div>
+                  </div>
+
+                  {/* Lead Time indicator */}
+                  <div className="pt-4 border-t border-brand-hairline flex items-center space-x-2.5 text-[11px] text-brand-muted font-sans">
+                    <CalendarDays className="w-3.5 h-3.5 text-brand-clay" />
+                    <span>
+                      {language === 'fr'
+                        ? 'Délai moyen d’étude & diagnostic : 10 jours ouvrés'
+                        : 'Average audit & diagnostic window: 10 business days'}
+                    </span>
+                  </div>
                 </div>
+
               </div>
             </div>
 

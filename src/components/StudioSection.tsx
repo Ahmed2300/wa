@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT, BRAND_ASSETS } from '@/data/content';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ShieldCheck, Award, Sparkles, Building2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Building2 } from 'lucide-react';
 
 export default function StudioSection() {
   const { language } = useLanguage();
@@ -22,26 +22,30 @@ export default function StudioSection() {
     <section id="studio" className="w-full bg-brand-bg py-24 sm:py-32 border-b border-brand-hairline">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
         
-        {/* Top Monograph Statement */}
+        {/* Top Monograph Statement & Studio Atelier Imagery */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-20">
-          <div className="lg:col-span-5">
-            <div className="flex items-center space-x-3 mb-3">
-              <span className="w-6 h-[1px] bg-brand-clay" />
-              <p className="font-sans text-[11px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
-                {t.eyebrow}
+          
+          {/* Left Column: Statement & Atelier Address */}
+          <div className="lg:col-span-5 flex flex-col justify-between h-full">
+            <div>
+              <div className="flex items-center space-x-3 mb-3">
+                <span className="w-6 h-[1px] bg-brand-clay" />
+                <p className="font-sans text-[11px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
+                  {t.eyebrow}
+                </p>
+              </div>
+
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-6">
+                {t.title}
+              </h2>
+              <p className="font-sans text-brand-muted text-base lg:text-lg font-light leading-relaxed mb-6">
+                {t.subtitle}
+              </p>
+              <div className="w-16 h-[1px] bg-brand-hairline mb-8" />
+              <p className="font-sans text-brand-muted text-sm leading-relaxed mb-8">
+                {t.manifesto}
               </p>
             </div>
-
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-6">
-              {t.title}
-            </h2>
-            <p className="font-sans text-brand-muted text-base lg:text-lg font-light leading-relaxed mb-6">
-              {t.subtitle}
-            </p>
-            <div className="w-16 h-[1px] bg-brand-hairline mb-8" />
-            <p className="font-sans text-brand-muted text-sm leading-relaxed mb-8">
-              {t.manifesto}
-            </p>
 
             {/* Atelier Paris Address Citation */}
             <div className="p-4 border border-brand-hairline bg-brand-sand/30 text-xs font-sans text-brand-black/90 flex items-center space-x-3">
@@ -50,9 +54,24 @@ export default function StudioSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          {/* Right Column: High-Res Atelier Photography + Visual Quote */}
+          <div className="lg:col-span-7 space-y-6">
+            
+            {/* High-Resolution Atelier Architecture Photography */}
+            <div className="relative h-72 sm:h-96 w-full overflow-hidden border border-brand-hairline bg-brand-sand/40 group">
+              <img
+                src={BRAND_ASSETS.studioImage}
+                alt="WA Design France Parisian Architecture Atelier"
+                className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+              <div className="absolute bottom-3 right-3 bg-brand-bg/95 px-3 py-1 text-[10px] uppercase font-mono tracking-wider text-brand-black border border-brand-hairline">
+                ATELIER · PARIS VIe
+              </div>
+            </div>
+
             {/* Atelier Visual Quote Box */}
-            <div className="bg-brand-sand/40 border border-brand-hairline p-8 sm:p-12 relative overflow-hidden mb-8">
+            <div className="bg-brand-sand/40 border border-brand-hairline p-8 sm:p-10 relative overflow-hidden">
               <span className="font-serif text-7xl text-brand-clay/20 absolute -top-2 left-4 select-none">
                 “
               </span>
@@ -82,6 +101,7 @@ export default function StudioSection() {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
 
