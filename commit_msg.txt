@@ -1,0 +1,1 @@
+refactor(navbar): remove coordinates badge next to logo as requested

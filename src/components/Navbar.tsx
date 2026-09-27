@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { CONTENT, BRAND_ASSETS } from '@/data/content';
-import { Menu, X, ArrowUpRight, Compass } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 
 export default function Navbar() {
@@ -43,8 +43,8 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 h-20 sm:h-24 flex items-center justify-between">
-          {/* Brand Wordmark & Paris Studio Seal */}
-          <div className="flex items-center space-x-6">
+          {/* Brand Wordmark */}
+          <div className="flex items-center">
             <a
               href="#"
               className="inline-flex items-center group transition-opacity duration-300 hover:opacity-85"
@@ -56,12 +56,6 @@ export default function Navbar() {
                 className="h-9 sm:h-11 w-auto object-contain"
               />
             </a>
-
-            {/* Subtle Atelier Coordinates - Desktop Only */}
-            <div className="hidden xl:flex items-center space-x-2 text-[10px] tracking-monograph uppercase text-brand-muted/70 border-l border-brand-hairline pl-6 font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-              <span>Paris 7e · 48.85°N</span>
-            </div>
           </div>
 
           {/* Desktop Architectural Monograph Navigation */}
