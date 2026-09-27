@@ -1,6 +1,0 @@
-feat: add luxury open graph preview card for WhatsApp and social sharing
-
-- Created ultra-high-definition 1200x630 OpenGraph assets (og-image.jpg, og-image.png)
-- Crafted clean Parisian luxury visual design with brand monogram seal, typography, and luxury apartment imagery
-- Optimized file size under 300KB (132KB) for instant WhatsAppBot/TelegramBot unfurling
-- Configured metadataBase and full OpenGraph/Twitter Card metadata in layout.tsx
