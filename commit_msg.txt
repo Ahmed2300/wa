@@ -1,6 +1,0 @@
-feat(branding): add official WA Design architectural monogram favicon and app icons
-
-- Generate multi-resolution favicon.ico (16x16, 32x32, 48x48) with Garamond WA monogram
-- Add razor-sharp vector SVG favicon (public/favicon.svg and src/app/icon.svg)
-- Add Apple touch icon (180x180) and high-DPI PWA icons (src/app/apple-icon.png, public/icon-512.png)
-- Configure metadata icons in RootLayout for full cross-browser and Retina compatibility
