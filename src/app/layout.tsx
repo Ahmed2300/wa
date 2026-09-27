@@ -23,23 +23,49 @@ const sansFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'WA Design France — Architecture d’Intérieur & Rénovation Paris',
+  metadataBase: new URL('https://wadesign.fr'),
+  title: 'WA Design France — Rénovation d’Appartements de Luxe Paris',
   description:
-    'Rénovation haut de gamme et architecture d’intérieur sur-mesure pour appartements haussmanniens et contemporains à Paris et en Île-de-France.',
+    'Rénovez votre appartement avec élégance et précision. Wa.Design transforme vos espaces de vie en lieux d’exception à Paris et en Île-de-France. Du premier croquis à la remise des clés.',
   keywords: [
+    'Wa.Design',
     'WA Design France',
+    'Rénovation appartement Paris',
+    'Rénovation luxe Paris',
     'Architecture intérieur Paris',
     'Rénovation haussmannien',
+    'Neuilly-sur-Seine',
     'Quiet luxury Paris',
-    'Architecte intérieur Saint-Germain-des-Prés',
     'Maîtrise d’œuvre Paris',
   ],
+  authors: [{ name: 'WA Design France' }],
+  creator: 'WA Design France',
+  publisher: 'WA Design France',
   openGraph: {
-    title: 'WA Design France — Architecture d’Intérieur & Rénovation Paris',
-    description: 'Des intérieurs pensés pour durer. Rénovation d’exception à Paris.',
     type: 'website',
     locale: 'fr_FR',
     url: 'https://wadesign.fr',
+    siteName: 'WA Design France',
+    title: 'WA Design France — Rénovation d’Appartements de Luxe Paris',
+    description:
+      'Rénovez votre appartement avec élégance et précision. Spécialistes de la rénovation d’appartements luxueux à Paris et en Île-de-France.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'WA Design France — Rénovation d’Appartements de Luxe Paris',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WA Design France — Rénovation d’Appartements de Luxe Paris',
+    description:
+      'Rénovez votre appartement avec élégance et précision. Spécialistes de la rénovation d’appartements luxueux à Paris et en Île-de-France.',
+    images: ['/og-image.jpg'],
+    creator: '@wadesignfrance',
   },
   icons: {
     icon: [
