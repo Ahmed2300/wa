@@ -10,27 +10,27 @@ export default function ServicesSection() {
   const t = CONTENT[language].services;
 
   return (
-    <section id="services" className="w-full bg-brand-bg py-24 sm:py-32 border-b border-brand-hairline">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <section id="services" className="w-full bg-brand-bg py-16 sm:py-24 lg:py-32 border-b border-brand-hairline">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
-          <div className="flex items-center space-x-3 mb-3">
+        <div className="max-w-3xl mb-10 sm:mb-16">
+          <div className="flex items-center space-x-3 mb-2.5 sm:mb-3">
             <span className="w-6 h-[1px] bg-brand-clay" />
-            <p className="font-sans text-[11px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
+            <p className="font-sans text-[10px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
               {t.eyebrow}
             </p>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-4">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-3 sm:mb-4">
             {t.title}
           </h2>
-          <p className="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed">
+          <p className="font-sans text-brand-muted text-xs sm:text-base font-light leading-relaxed">
             {t.subtitle}
           </p>
         </div>
 
         {/* 5 Architectural Services Cards with High-Res Imagery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {t.items.map((service, index) => (
             <motion.div
               key={service.number}
@@ -38,11 +38,11 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-6 sm:p-7 border border-brand-hairline bg-brand-bg flex flex-col justify-between hover:bg-brand-sand/30 hover:border-brand-black/40 transition-all duration-300 rounded-none group shadow-xs hover:shadow-md"
+              className="p-5 sm:p-7 border border-brand-hairline bg-brand-bg flex flex-col justify-between hover:bg-brand-sand/30 hover:border-brand-black/40 transition-all duration-300 rounded-none group shadow-xs hover:shadow-md"
             >
               <div>
                 {/* High-Resolution Dedicated Architectural Image */}
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden mb-6 bg-brand-sand/40 border border-brand-hairline">
+                <div className="relative h-44 sm:h-52 w-full overflow-hidden mb-5 sm:mb-6 bg-brand-sand/40 border border-brand-hairline">
                   <img
                     src={service.imageUrl}
                     alt={service.title}

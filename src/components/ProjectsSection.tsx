@@ -55,7 +55,7 @@ function ParallaxProjectCard({
           <span className="absolute bottom-2 right-2 z-20 text-[10px] font-mono text-brand-black/40">+</span>
 
           {/* In-Frame Parallax Container */}
-          <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[580px] overflow-hidden">
+          <div className="relative w-full h-[280px] sm:h-[400px] md:h-[480px] lg:h-[580px] overflow-hidden">
             <motion.div
               style={{ y: imgY, scale: 1.12 }}
               className="w-full h-full will-change-transform"
@@ -178,32 +178,32 @@ export default function ProjectsSection() {
   });
 
   return (
-    <section id="projets" className="w-full bg-brand-bg py-24 sm:py-32 border-b border-brand-hairline relative">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <section id="projets" className="w-full bg-brand-bg py-16 sm:py-24 lg:py-32 border-b border-brand-hairline relative">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-6">
           <div className="max-w-3xl">
-            <div className="flex items-center space-x-3 mb-3">
+            <div className="flex items-center space-x-3 mb-2.5 sm:mb-3">
               <span className="w-6 h-[1px] bg-brand-clay" />
-              <p className="font-sans text-[11px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
+              <p className="font-sans text-[10px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
                 {t.eyebrow}
               </p>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-4">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-3 sm:mb-4">
               {t.title}
             </h2>
-            <p className="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed">
+            <p className="font-sans text-brand-muted text-xs sm:text-base font-light leading-relaxed">
               {t.subtitle}
             </p>
           </div>
 
           {/* View Mode Switcher (Grid vs. Monograph Index) with Sliding Indicator */}
-          <div className="flex items-center space-x-1 border border-brand-hairline p-1 bg-brand-sand/30 self-start md:self-auto text-[11px] font-sans uppercase tracking-wider relative">
+          <div className="flex items-center space-x-1 border border-brand-hairline p-1 bg-brand-sand/30 self-start md:self-auto text-[10px] sm:text-[11px] font-sans uppercase tracking-wider relative shrink-0">
             <button
               type="button"
               onClick={() => setViewMode('grid')}
-              className={`relative z-10 inline-flex items-center space-x-1.5 px-3 py-1.5 transition-colors duration-200 ${
+              className={`relative z-10 inline-flex items-center space-x-1.5 px-3 py-1.5 transition-colors duration-200 min-h-[36px] ${
                 viewMode === 'grid'
                   ? 'text-brand-bg font-medium'
                   : 'text-brand-muted hover:text-brand-black'
@@ -222,7 +222,7 @@ export default function ProjectsSection() {
             <button
               type="button"
               onClick={() => setViewMode('index')}
-              className={`relative z-10 inline-flex items-center space-x-1.5 px-3 py-1.5 transition-colors duration-200 ${
+              className={`relative z-10 inline-flex items-center space-x-1.5 px-3 py-1.5 transition-colors duration-200 min-h-[36px] ${
                 viewMode === 'index'
                   ? 'text-brand-bg font-medium'
                   : 'text-brand-muted hover:text-brand-black'
@@ -242,8 +242,8 @@ export default function ProjectsSection() {
         </div>
 
         {/* Filter Tabs Bar with Animated Moving Underline */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-14 border-b border-brand-hairline text-xs uppercase tracking-wider font-sans">
-          <div className="flex items-center space-x-2 sm:space-x-8 overflow-x-auto no-scrollbar">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-10 sm:mb-14 border-b border-brand-hairline text-xs uppercase tracking-wider font-sans">
+          <div className="flex items-center space-x-3 sm:space-x-8 overflow-x-auto no-scrollbar scroll-smooth snap-x py-1 w-full sm:w-auto">
             {[
               { id: 'all', label: t.filterAll },
               { id: 'haussmann', label: t.filterHaussmann },
@@ -256,7 +256,7 @@ export default function ProjectsSection() {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveFilter(tab.id)}
-                  className={`relative pb-4 pt-1 px-1 sm:px-2 transition-colors duration-200 text-xs font-sans tracking-editorial uppercase whitespace-nowrap ${
+                  className={`flex-shrink-0 snap-start relative pb-3 pt-1 px-1.5 sm:px-2 transition-colors duration-200 text-xs font-sans tracking-editorial uppercase whitespace-nowrap min-h-[40px] flex items-center ${
                     isActive ? 'text-brand-black font-medium' : 'text-brand-muted hover:text-brand-black'
                   }`}
                 >
@@ -273,7 +273,7 @@ export default function ProjectsSection() {
             })}
           </div>
 
-          <div className="text-[11px] text-brand-muted font-mono tracking-widest hidden sm:block pb-4">
+          <div className="text-[10px] sm:text-[11px] text-brand-muted font-mono tracking-widest hidden sm:block pb-3">
             {filteredProjects.length} {language === 'fr' ? 'RÉALISATIONS MONOGRAPHIÉES' : 'RECORDED MONOGRAPHS'}
           </div>
         </div>
@@ -320,26 +320,47 @@ export default function ProjectsSection() {
                 <div
                   key={p.id}
                   onClick={() => setSelectedProject(p)}
-                  className="grid grid-cols-1 md:grid-cols-12 py-5 items-center hover:bg-brand-sand/30 transition-colors cursor-pointer group px-2"
+                  className="cursor-pointer group"
                 >
-                  <span className="col-span-1 font-mono text-xs text-brand-clay">
-                    0{i + 1}
-                  </span>
-                  <span className="col-span-4 font-serif text-xl sm:text-2xl text-brand-black group-hover:text-brand-clay transition-colors">
-                    {p.title}
-                  </span>
-                  <span className="col-span-3 text-xs font-sans text-brand-muted">
-                    {p.location}
-                  </span>
-                  <span className="col-span-2 text-xs font-sans text-brand-black">
-                    {p.category}
-                  </span>
-                  <span className="col-span-1 text-xs font-mono text-brand-muted">
-                    {p.area}
-                  </span>
-                  <span className="col-span-1 text-right font-mono text-xs text-brand-black">
-                    {p.year}
-                  </span>
+                  {/* Mobile Monograph Row (< md) */}
+                  <div className="md:hidden py-4 px-2 hover:bg-brand-sand/30 transition-colors">
+                    <div className="flex items-center justify-between text-[11px] font-mono mb-1.5">
+                      <span className="text-brand-clay font-medium">0{i + 1}</span>
+                      <span className="text-brand-muted">{p.year}</span>
+                    </div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <h4 className="font-serif text-lg text-brand-black group-hover:text-brand-clay transition-colors leading-snug">
+                        {p.title}
+                      </h4>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-brand-clay shrink-0 ml-2" />
+                    </div>
+                    <div className="flex items-center justify-between text-xs font-sans text-brand-muted">
+                      <span>{p.location} · {p.category}</span>
+                      <span className="font-mono text-brand-black">{p.area}</span>
+                    </div>
+                  </div>
+
+                  {/* Desktop Monograph Row (>= md) */}
+                  <div className="hidden md:grid grid-cols-12 py-5 items-center hover:bg-brand-sand/30 transition-colors px-2">
+                    <span className="col-span-1 font-mono text-xs text-brand-clay">
+                      0{i + 1}
+                    </span>
+                    <span className="col-span-4 font-serif text-xl sm:text-2xl text-brand-black group-hover:text-brand-clay transition-colors">
+                      {p.title}
+                    </span>
+                    <span className="col-span-3 text-xs font-sans text-brand-muted">
+                      {p.location}
+                    </span>
+                    <span className="col-span-2 text-xs font-sans text-brand-black">
+                      {p.category}
+                    </span>
+                    <span className="col-span-1 text-xs font-mono text-brand-muted">
+                      {p.area}
+                    </span>
+                    <span className="col-span-1 text-right font-mono text-xs text-brand-black">
+                      {p.year}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -350,11 +371,11 @@ export default function ProjectsSection() {
 
         {/* Section Retours Clients (Client Reviews) */}
         {t.testimonials && t.testimonials.length > 0 && (
-          <div className="mt-24 sm:mt-32 pt-16 border-t border-brand-hairline">
-            <div className="max-w-3xl mb-12">
+          <div className="mt-20 sm:mt-32 pt-12 sm:pt-16 border-t border-brand-hairline">
+            <div className="max-w-3xl mb-10 sm:mb-12">
               <div className="flex items-center space-x-3 mb-2">
                 <span className="w-5 h-[1px] bg-brand-clay" />
-                <span className="font-sans text-[11px] font-normal tracking-editorial text-brand-clay uppercase">
+                <span className="font-sans text-[10px] sm:text-[11px] font-normal tracking-editorial text-brand-clay uppercase">
                   {language === 'fr' ? 'TÉMOIGNAGES · CONFIANCE' : 'TESTIMONIALS · TRUST'}
                 </span>
               </div>
@@ -363,21 +384,21 @@ export default function ProjectsSection() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {t.testimonials.map((test, idx) => (
                 <div
                   key={idx}
-                  className="p-8 sm:p-10 border border-brand-hairline bg-brand-sand/30 relative flex flex-col justify-between"
+                  className="p-6 sm:p-8 lg:p-10 border border-brand-hairline bg-brand-sand/30 relative flex flex-col justify-between"
                 >
-                  <span className="font-serif text-6xl text-brand-clay/20 absolute top-4 left-6 select-none pointer-events-none">
+                  <span className="font-serif text-5xl sm:text-6xl text-brand-clay/20 absolute top-4 left-6 select-none pointer-events-none">
                     “
                   </span>
-                  <blockquote className="relative z-10 font-serif text-lg sm:text-xl text-brand-black/95 font-normal italic leading-relaxed mb-6 pt-3">
+                  <blockquote className="relative z-10 font-serif text-base sm:text-lg lg:text-xl text-brand-black/95 font-normal italic leading-relaxed mb-6 pt-2 sm:pt-3">
                     &laquo;&nbsp;{test.quote}&nbsp;&raquo;
                   </blockquote>
                   <div className="flex items-center justify-between text-xs tracking-editorial uppercase text-brand-muted font-sans border-t border-brand-hairline pt-4">
                     <span className="font-medium text-brand-black">{test.author}</span>
-                    <span className="font-mono text-[11px] text-brand-clay">{test.location}</span>
+                    <span className="font-mono text-[10px] sm:text-[11px] text-brand-clay">{test.location}</span>
                   </div>
                 </div>
               ))}
@@ -393,7 +414,7 @@ export default function ProjectsSection() {
           <div
             data-lenis-prevent="true"
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-brand-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 lg:p-10 bg-brand-black/80 backdrop-blur-sm"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
@@ -402,51 +423,51 @@ export default function ProjectsSection() {
               transition={{ duration: 0.3 }}
               data-lenis-prevent="true"
               onClick={(e) => e.stopPropagation()}
-              className="bg-brand-bg border border-brand-hairline max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl custom-scrollbar overscroll-contain"
+              className="bg-brand-bg border border-brand-hairline max-w-4xl w-full max-h-[92vh] sm:max-h-[90vh] overflow-y-auto p-5 sm:p-8 lg:p-10 relative shadow-2xl custom-scrollbar overscroll-contain"
             >
               {/* Close Button */}
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 text-brand-black hover:text-brand-clay transition-colors"
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 text-brand-black hover:text-brand-clay transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
                 aria-label="Close monograph"
               >
                 <X className="w-6 h-6" />
               </button>
 
               {/* Header */}
-              <div className="mb-6">
-                <div className="flex items-center space-x-2 text-[11px] font-sans tracking-editorial uppercase text-brand-clay mb-2">
+              <div className="mb-6 pr-8">
+                <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] font-sans tracking-editorial uppercase text-brand-clay mb-2">
                   <span>{selectedProject.location}</span>
                   <span>·</span>
                   <span>{selectedProject.year}</span>
                 </div>
-                <h3 className="font-serif text-3xl sm:text-4xl text-brand-black mb-3">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-brand-black mb-3">
                   {selectedProject.title}
                 </h3>
-                <p className="font-sans text-sm text-brand-muted leading-relaxed max-w-2xl">
+                <p className="font-sans text-xs sm:text-sm text-brand-muted leading-relaxed max-w-2xl">
                   {selectedProject.description}
                 </p>
               </div>
 
               {/* Big Image */}
-              <div className="mb-8 border border-brand-hairline overflow-hidden bg-brand-sand/30">
+              <div className="mb-6 sm:mb-8 border border-brand-hairline overflow-hidden bg-brand-sand/30">
                 <img
                   src={selectedProject.imageUrl}
                   alt={selectedProject.title}
-                  className="w-full h-[360px] sm:h-[460px] object-cover"
+                  className="w-full h-[220px] sm:h-[340px] lg:h-[460px] object-cover"
                 />
               </div>
 
               {/* Specs Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 border-y border-brand-hairline text-xs font-sans mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 py-4 sm:py-6 border-y border-brand-hairline text-xs font-sans mb-6 sm:mb-8">
                 <div>
-                  <span className="text-[10px] tracking-editorial uppercase text-brand-muted block">Typologie</span>
-                  <span className="font-medium text-brand-black">{selectedProject.category}</span>
+                  <span className="text-[9px] sm:text-[10px] tracking-editorial uppercase text-brand-muted block">Typologie</span>
+                  <span className="font-medium text-brand-black text-xs sm:text-sm">{selectedProject.category}</span>
                 </div>
                 <div>
-                  <span className="text-[10px] tracking-editorial uppercase text-brand-muted block">Surface</span>
-                  <span className="font-medium text-brand-black">{selectedProject.area}</span>
+                  <span className="text-[9px] sm:text-[10px] tracking-editorial uppercase text-brand-muted block">Surface</span>
+                  <span className="font-medium text-brand-black text-xs sm:text-sm">{selectedProject.area}</span>
                 </div>
                 <div>
                   <span className="text-[10px] tracking-editorial uppercase text-brand-muted block">Maîtrise d&apos;œuvre</span>

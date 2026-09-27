@@ -26,25 +26,25 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="w-full bg-brand-sandLight/30 py-24 sm:py-32 border-b border-brand-hairline">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <section id="contact" className="w-full bg-brand-sandLight/30 py-16 sm:py-24 lg:py-32 border-b border-brand-hairline">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           
           {/* Left Column: Coordinates & Information */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <div className="flex items-center space-x-3 mb-3">
+              <div className="flex items-center space-x-3 mb-2.5 sm:mb-3">
                 <span className="w-6 h-[1px] bg-brand-clay" />
                 <p className="font-sans text-[11px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
                   {t.eyebrow}
                 </p>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-5">
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-3 sm:mb-5">
                 {t.title}
               </h2>
-              <p className="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed mb-8">
+              <p className="font-sans text-brand-muted text-xs sm:text-base font-light leading-relaxed mb-6 sm:mb-8">
                 {t.subtitle}
               </p>
 
@@ -52,7 +52,7 @@ export default function ContactSection() {
               <div className="bg-brand-bg border border-brand-hairline overflow-hidden shadow-xs">
                 
                 {/* Atelier Photo */}
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-brand-sand/50 group">
+                <div className="relative h-44 sm:h-52 w-full overflow-hidden bg-brand-sand/50 group">
                   <img
                     src={BRAND_ASSETS.contactImage}
                     alt="Wa.Design France Atelier Paris"
@@ -64,7 +64,7 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div className="p-7 space-y-6">
+                <div className="p-5 sm:p-7 space-y-5 sm:space-y-6">
                   {/* Zone d'intervention */}
                   <div>
                     <div className="flex items-center space-x-2 text-xs font-sans tracking-editorial uppercase text-brand-black font-medium mb-1.5">
@@ -80,10 +80,10 @@ export default function ContactSection() {
                   </div>
 
                   {/* Direct Contact info */}
-                  <div className="pt-4 border-t border-brand-hairline space-y-3.5 text-xs font-sans">
+                  <div className="pt-4 border-t border-brand-hairline space-y-3 sm:space-y-3.5 text-xs font-sans">
                     <div className="flex items-center space-x-3 text-brand-black">
                       <Mail className="w-3.5 h-3.5 text-brand-clay" />
-                      <a href={`mailto:${t.email}`} className="hover:text-brand-clay transition-colors font-medium">
+                      <a href={`mailto:${t.email}`} className="hover:text-brand-clay transition-colors font-medium break-all sm:break-normal">
                         {t.email}
                       </a>
                     </div>
@@ -93,7 +93,7 @@ export default function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-brand-hairline text-[11px] text-brand-muted font-sans flex items-center justify-between">
+                  <div className="pt-4 border-t border-brand-hairline text-[10px] sm:text-[11px] text-brand-muted font-sans flex items-center justify-between">
                     <span>{language === 'fr' ? 'Premier échange sans engagement' : 'Initial consultation without obligation'}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-brand-clay" />
                   </div>
@@ -102,8 +102,8 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="mt-8 flex items-center space-x-2 text-xs font-sans text-brand-muted/80 tracking-wide">
-              <Shield className="w-3.5 h-3.5 text-brand-clay" />
+            <div className="mt-6 sm:mt-8 flex items-center space-x-2 text-xs font-sans text-brand-muted/80 tracking-wide">
+              <Shield className="w-3.5 h-3.5 text-brand-clay flex-shrink-0" />
               <span>
                 {language === 'fr'
                   ? "Assurance décennale, discrétion patrimoniale et respect strict des devis."
@@ -113,7 +113,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Authentic Inquiry Form */}
-          <div className="lg:col-span-7 bg-brand-bg border border-brand-hairline p-8 sm:p-12 shadow-sm">
+          <div className="lg:col-span-7 bg-brand-bg border border-brand-hairline p-5 sm:p-8 lg:p-12 shadow-sm">
             {submitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -136,11 +136,11 @@ export default function ContactSection() {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-7">
                 
                 {/* Project Typology Selector Chips */}
                 <div>
-                  <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-3 font-sans font-medium">
+                  <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-2.5 font-sans font-medium">
                     {t.form.projectTypeLabel} *
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -149,7 +149,7 @@ export default function ContactSection() {
                         type="button"
                         key={i}
                         onClick={() => setSelectedProjectType(pt)}
-                        className={`px-3.5 py-2 text-xs font-sans transition-all duration-200 border cursor-pointer ${
+                        className={`px-3 py-2 sm:px-3.5 sm:py-2 text-[11px] sm:text-xs font-sans min-h-[40px] flex items-center transition-all duration-200 border cursor-pointer ${
                           selectedProjectType === pt
                             ? 'bg-brand-black text-brand-bg border-brand-black font-medium'
                             : 'bg-brand-sand/20 border-brand-hairline text-brand-black hover:border-brand-black'
@@ -162,93 +162,93 @@ export default function ContactSection() {
                 </div>
 
                 {/* Name & Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-2 font-sans font-medium">
+                    <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-1.5 font-sans font-medium">
                       {t.form.nameLabel} *
                     </label>
                     <input
                       type="text"
                       required
                       placeholder={t.form.namePlaceholder}
-                      className="w-full bg-transparent border-b border-brand-hairline py-2.5 text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
+                      className="w-full bg-transparent border-b border-brand-hairline py-2 sm:py-2.5 text-xs sm:text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-2 font-sans font-medium">
+                    <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-1.5 font-sans font-medium">
                       {t.form.emailLabel} *
                     </label>
                     <input
                       type="email"
                       required
                       placeholder={t.form.emailPlaceholder}
-                      className="w-full bg-transparent border-b border-brand-hairline py-2.5 text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
+                      className="w-full bg-transparent border-b border-brand-hairline py-2 sm:py-2.5 text-xs sm:text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
                     />
                   </div>
                 </div>
 
                 {/* Phone & Ville / Arrondissement */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-2 font-sans font-medium">
+                    <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-1.5 font-sans font-medium">
                       {t.form.phoneLabel} *
                     </label>
                     <input
                       type="tel"
                       required
                       placeholder={t.form.phonePlaceholder}
-                      className="w-full bg-transparent border-b border-brand-hairline py-2.5 text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
+                      className="w-full bg-transparent border-b border-brand-hairline py-2 sm:py-2.5 text-xs sm:text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-2 font-sans font-medium">
+                    <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-1.5 font-sans font-medium">
                       {t.form.cityLabel} *
                     </label>
                     <input
                       type="text"
                       required
                       placeholder={t.form.cityPlaceholder}
-                      className="w-full bg-transparent border-b border-brand-hairline py-2.5 text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
+                      className="w-full bg-transparent border-b border-brand-hairline py-2 sm:py-2.5 text-xs sm:text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
                     />
                   </div>
                 </div>
 
                 {/* Approximate Surface Area */}
                 <div>
-                  <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-2 font-sans font-medium">
+                  <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-1.5 font-sans font-medium">
                     {t.form.areaLabel}
                   </label>
                   <input
                     type="text"
                     placeholder={language === 'fr' ? 'ex. 120 m²' : 'e.g. 120 sqm'}
-                    className="w-full bg-transparent border-b border-brand-hairline py-2.5 text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
+                    className="w-full bg-transparent border-b border-brand-hairline py-2 sm:py-2.5 text-xs sm:text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none"
                   />
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-2 font-sans font-medium">
+                  <label className="block text-[11px] uppercase tracking-editorial text-brand-muted mb-1.5 font-sans font-medium">
                     {t.form.messageLabel} *
                   </label>
                   <textarea
                     rows={4}
                     required
                     placeholder={t.form.messagePlaceholder}
-                    className="w-full bg-transparent border-b border-brand-hairline py-2.5 text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none resize-none"
+                    className="w-full bg-transparent border-b border-brand-hairline py-2 sm:py-2.5 text-xs sm:text-sm font-sans text-brand-black placeholder:text-brand-muted/40 focus:outline-none focus:border-brand-black transition-colors rounded-none resize-none"
                   />
                 </div>
 
                 {/* Submit Action */}
-                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full sm:w-auto px-10 py-4 bg-brand-black text-brand-bg hover:bg-brand-clay text-xs tracking-editorial uppercase transition-all duration-300 rounded-none disabled:opacity-50 shadow-md cursor-pointer"
+                    className="w-full sm:w-auto min-h-[48px] px-8 py-3.5 sm:px-10 sm:py-4 bg-brand-black text-brand-bg hover:bg-brand-clay text-xs tracking-editorial uppercase transition-all duration-300 rounded-none disabled:opacity-50 shadow-md cursor-pointer flex items-center justify-center"
                   >
                     {loading ? t.form.submitting : t.form.submit}
                   </button>
 
-                  <span className="text-[11px] font-sans text-brand-muted">
+                  <span className="text-[10px] sm:text-[11px] font-sans text-brand-muted text-center sm:text-left">
                     {t.responseNotice}
                   </span>
                 </div>

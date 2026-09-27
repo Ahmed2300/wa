@@ -53,7 +53,7 @@ export default function Navbar() {
             : 'bg-brand-bg/90 border-b border-brand-sand/80'
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 h-20 sm:h-24 flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 h-20 sm:h-24 flex items-center justify-between">
           {/* Brand Wordmark */}
           <div className="flex items-center">
             <a
@@ -64,7 +64,7 @@ export default function Navbar() {
               <img
                 src={BRAND_ASSETS.wordmark}
                 alt="WA DESIGN FRANCE"
-                className="h-9 sm:h-11 w-auto object-contain"
+                className="h-8 sm:h-10 lg:h-11 w-auto object-contain"
               />
             </a>
           </div>
@@ -220,13 +220,13 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
             data-lenis-prevent="true"
-            className="fixed inset-x-0 top-20 bg-brand-bg border-b border-brand-hairline z-40 lg:hidden px-8 py-10 shadow-2xl max-h-[calc(100vh-5rem)] overflow-y-auto custom-scrollbar overscroll-contain"
+            className="fixed inset-x-0 top-20 sm:top-24 bg-brand-bg border-b border-brand-hairline z-40 lg:hidden px-6 sm:px-10 py-6 sm:py-8 shadow-2xl max-h-[calc(100vh-5rem)] sm:max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar overscroll-contain"
           >
-            <div className="flex flex-col space-y-6 text-xs font-sans tracking-[0.22em] uppercase text-brand-black">
+            <div className="flex flex-col space-y-4 sm:space-y-6 text-xs font-sans tracking-[0.22em] uppercase text-brand-black">
               <a
                 href="#projets"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-brand-clay transition-colors flex items-center justify-between"
+                className="hover:text-brand-clay transition-colors flex items-center justify-between min-h-[44px] py-1 border-b border-brand-hairline/40"
               >
                 <span>{t.nav.projects}</span>
                 <span className="text-[10px] text-brand-muted font-mono">01</span>
@@ -234,7 +234,7 @@ export default function Navbar() {
               <a
                 href="#studio"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-brand-clay transition-colors flex items-center justify-between"
+                className="hover:text-brand-clay transition-colors flex items-center justify-between min-h-[44px] py-1 border-b border-brand-hairline/40"
               >
                 <span>{t.nav.studio}</span>
                 <span className="text-[10px] text-brand-muted font-mono">02</span>
@@ -242,7 +242,7 @@ export default function Navbar() {
               <a
                 href="#services"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-brand-clay transition-colors flex items-center justify-between"
+                className="hover:text-brand-clay transition-colors flex items-center justify-between min-h-[44px] py-1 border-b border-brand-hairline/40"
               >
                 <span>{t.nav.services}</span>
                 <span className="text-[10px] text-brand-muted font-mono">03</span>
@@ -250,7 +250,7 @@ export default function Navbar() {
               <a
                 href="#matieres"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-brand-clay transition-colors flex items-center justify-between"
+                className="hover:text-brand-clay transition-colors flex items-center justify-between min-h-[44px] py-1 border-b border-brand-hairline/40"
               >
                 <span>{t.nav.materials}</span>
                 <span className="text-[10px] text-brand-muted font-mono">04</span>
@@ -260,7 +260,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="inline-flex items-center justify-between text-brand-muted hover:text-brand-black"
+                className="inline-flex items-center justify-between text-brand-muted hover:text-brand-black min-h-[44px] py-1 border-b border-brand-hairline/40"
               >
                 <span>Instagram @wa.design.france</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-brand-clay" />
@@ -268,16 +268,16 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="hover:text-brand-clay transition-colors flex items-center justify-between"
+                className="hover:text-brand-clay transition-colors flex items-center justify-between min-h-[44px] py-1 border-b border-brand-hairline/40"
               >
                 <span>{t.nav.contact}</span>
                 <span className="text-[10px] text-brand-muted font-mono">05</span>
               </a>
-              <div className="pt-4 border-t border-brand-hairline">
+              <div className="pt-2">
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block text-center border border-brand-black bg-brand-black text-brand-bg px-6 py-3.5 rounded-none text-xs tracking-editorial uppercase hover:bg-brand-clay hover:border-brand-clay transition-colors"
+                  className="block text-center border border-brand-black bg-brand-black text-brand-bg px-6 py-4 rounded-none text-xs tracking-editorial uppercase hover:bg-brand-clay hover:border-brand-clay transition-colors shadow-xs"
                 >
                   {t.nav.bookConsultation}
                 </a>

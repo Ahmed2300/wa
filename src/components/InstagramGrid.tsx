@@ -89,22 +89,22 @@ export default function InstagramGrid() {
   );
 
   return (
-    <section ref={sectionRef} className="w-full bg-brand-bg py-24 sm:py-32 border-b border-brand-hairline overflow-hidden" id="journal">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <section ref={sectionRef} className="w-full bg-brand-bg py-16 sm:py-24 lg:py-32 border-b border-brand-hairline overflow-hidden" id="journal">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 sm:mb-18 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 lg:mb-18 gap-4 sm:gap-6">
           <div className="max-w-2xl">
-            <div className="flex items-center space-x-3 mb-3">
+            <div className="flex items-center space-x-3 mb-2.5 sm:mb-3">
               <span className="w-6 h-[1px] bg-brand-clay" />
               <p className="font-sans text-[11px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
                 {t.eyebrow}
               </p>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-3">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-2.5 sm:mb-3">
               {t.title}
             </h2>
-            <p className="font-sans text-brand-muted text-sm sm:text-base font-light">
+            <p className="font-sans text-brand-muted text-xs sm:text-base font-light">
               {t.subtitle}{' '}
               <a
                 href={t.instagramUrl}
@@ -117,12 +117,12 @@ export default function InstagramGrid() {
             </p>
           </div>
 
-          <div className="flex items-center space-x-3">
+          <div className="w-full sm:w-auto">
             <a
               href={t.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 border border-brand-black text-brand-black px-6 py-3.5 text-xs tracking-editorial uppercase hover:bg-brand-black hover:text-brand-bg transition-all duration-300 rounded-none shadow-xs"
+              className="inline-flex items-center justify-center space-x-2 border border-brand-black text-brand-black w-full sm:w-auto px-6 py-3.5 min-h-[44px] text-xs tracking-editorial uppercase hover:bg-brand-black hover:text-brand-bg transition-all duration-300 rounded-none shadow-xs"
             >
               <Instagram className="w-4 h-4 text-brand-clay" />
               <span>{t.exploreMore}</span>
@@ -144,8 +144,8 @@ export default function InstagramGrid() {
           </motion.div>
         </div>
 
-        {/* Mobile & Tablet: Standard Responsive Grid */}
-        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {/* Mobile & Tablet: Standard Responsive Grid (1 col mobile, 2 col small tablet, 3 col tablet for 9 items) */}
+        <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
           {t.tiles.map((tile, idx) => renderTile(tile, idx))}
         </div>
 
@@ -157,7 +157,7 @@ export default function InstagramGrid() {
           <div
             data-lenis-prevent="true"
             onClick={() => setActiveTile(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-brand-black/85 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 lg:p-10 bg-brand-black/85 backdrop-blur-md"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -165,32 +165,32 @@ export default function InstagramGrid() {
               exit={{ opacity: 0, scale: 0.95 }}
               data-lenis-prevent="true"
               onClick={(e) => e.stopPropagation()}
-              className="bg-brand-bg border border-brand-hairline max-w-4xl w-full max-h-[92vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl custom-scrollbar overscroll-contain"
+              className="bg-brand-bg border border-brand-hairline max-w-4xl w-full max-h-[92vh] sm:max-h-[90vh] overflow-y-auto p-4 sm:p-8 lg:p-10 relative shadow-2xl custom-scrollbar overscroll-contain"
             >
               <button
                 type="button"
                 onClick={() => setActiveTile(null)}
-                className="absolute top-6 right-6 p-2 text-brand-black hover:text-brand-clay transition-colors"
+                className="absolute top-4 sm:top-6 right-4 sm:right-6 p-2 text-brand-black hover:text-brand-clay transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label="Close photo modal"
               >
                 <X className="w-6 h-6" />
               </button>
 
-              <div className="flex items-center space-x-2 text-[11px] font-sans tracking-editorial uppercase text-brand-clay mb-3">
+              <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] font-sans tracking-editorial uppercase text-brand-clay mb-2 sm:mb-3">
                 <Instagram className="w-3.5 h-3.5" />
                 <span>ARCHIVES INSTAGRAM · {activeTile.location}</span>
               </div>
 
-              <div className="border border-brand-hairline overflow-hidden mb-6 bg-brand-sand/40">
+              <div className="border border-brand-hairline overflow-hidden mb-4 sm:mb-6 bg-brand-sand/40">
                 <img
                   src={activeTile.imageUrl}
                   alt={activeTile.caption}
-                  className="w-full max-h-[500px] object-cover"
+                  className="w-full max-h-[260px] sm:max-h-[380px] lg:max-h-[500px] object-cover"
                 />
               </div>
 
-              <div className="space-y-4">
-                <p className="font-serif text-xl sm:text-2xl text-brand-black leading-relaxed">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="font-serif text-lg sm:text-xl md:text-2xl text-brand-black leading-relaxed">
                   {activeTile.caption}
                 </p>
                 <div className="flex items-center space-x-3 text-xs font-mono text-brand-clay">
@@ -200,11 +200,11 @@ export default function InstagramGrid() {
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-brand-hairline flex flex-wrap items-center justify-between gap-4">
+              <div className="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t border-brand-hairline flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
                 <button
                   type="button"
                   onClick={() => setActiveTile(null)}
-                  className="text-xs uppercase tracking-editorial text-brand-muted hover:text-brand-black"
+                  className="text-xs uppercase tracking-editorial text-brand-muted hover:text-brand-black text-center py-2 sm:py-0 min-h-[44px] sm:min-h-0 flex items-center justify-center"
                 >
                   {language === 'fr' ? 'Retour à la galerie' : 'Back to gallery'}
                 </button>
@@ -212,7 +212,7 @@ export default function InstagramGrid() {
                   href={t.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-6 py-3 bg-brand-black text-brand-bg text-xs uppercase tracking-editorial hover:bg-brand-clay transition-colors"
+                  className="inline-flex items-center justify-center space-x-2 px-6 py-3 min-h-[44px] bg-brand-black text-brand-bg text-xs uppercase tracking-editorial hover:bg-brand-clay transition-colors"
                 >
                   <Instagram className="w-3.5 h-3.5" />
                   <span>{language === 'fr' ? 'Voir sur Instagram' : 'View on Instagram'}</span>

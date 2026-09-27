@@ -32,33 +32,33 @@ export default function MaterialInspector() {
   const textureY = useTransform(scrollYProgress, [0, 1], ['-6%', '6%']);
 
   return (
-    <section ref={sectionRef} id="matieres" className="w-full bg-brand-sandLight/40 py-24 sm:py-32 border-b border-brand-hairline relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <section ref={sectionRef} id="matieres" className="w-full bg-brand-sandLight/40 py-16 sm:py-24 lg:py-32 border-b border-brand-hairline relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 lg:mb-20 gap-4 sm:gap-6">
           <div className="max-w-3xl">
-            <div className="flex items-center space-x-3 mb-3">
+            <div className="flex items-center space-x-3 mb-2.5 sm:mb-3">
               <span className="w-6 h-[1px] bg-brand-clay" />
               <p className="font-sans text-[11px] sm:text-xs font-normal tracking-editorial text-brand-muted uppercase">
                 {t.eyebrow}
               </p>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-4">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-brand-black leading-tight mb-3 sm:mb-4">
               {t.title}
             </h2>
-            <p className="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed">
+            <p className="font-sans text-brand-muted text-xs sm:text-base font-light leading-relaxed">
               {t.subtitle}
             </p>
           </div>
 
-          <div className="text-[11px] font-sans text-brand-muted tracking-widest uppercase border-b border-brand-hairline pb-2 self-start md:self-auto">
+          <div className="text-[10px] sm:text-[11px] font-sans text-brand-muted tracking-widest uppercase border-b border-brand-hairline pb-2 self-start md:self-auto">
             {language === 'fr' ? '4 Matières Éprouvées' : '4 Enduring Specimens'}
           </div>
         </div>
 
         {/* 4 Tactile Materials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {t.items.map((mat, idx) => (
             <motion.div
               key={mat.name}
@@ -71,7 +71,7 @@ export default function MaterialInspector() {
             >
               <div>
                 {/* Material Texture Image with In-Frame Parallax */}
-                <div className="relative h-60 sm:h-64 overflow-hidden bg-brand-sand/50">
+                <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden bg-brand-sand/50">
                   <motion.div
                     style={{ y: textureY, scale: 1.12 }}
                     className="w-full h-full will-change-transform"
@@ -92,12 +92,12 @@ export default function MaterialInspector() {
                 </div>
 
                 {/* Material Specification Specs */}
-                <div className="p-6">
-                  <h3 className="font-serif text-xl text-brand-black mb-4 leading-snug group-hover:text-brand-clay transition-colors duration-200">
+                <div className="p-4 sm:p-6">
+                  <h3 className="font-serif text-lg sm:text-xl text-brand-black mb-3 sm:mb-4 leading-snug group-hover:text-brand-clay transition-colors duration-200">
                     {mat.name}
                   </h3>
 
-                  <div className="space-y-3 text-xs font-sans">
+                  <div className="space-y-2.5 sm:space-y-3 text-xs font-sans">
                     <div>
                       <span className="text-[10px] tracking-editorial uppercase text-brand-muted block font-medium">
                         {language === 'fr' ? 'Provenance' : 'Origin'}
@@ -125,9 +125,9 @@ export default function MaterialInspector() {
               </div>
 
               {/* Bottom Card Action */}
-              <div className="px-6 pb-5 pt-3 border-t border-brand-hairline/60 flex items-center justify-between text-[10px] uppercase tracking-editorial text-brand-muted group-hover:text-brand-black transition-colors">
+              <div className="px-4 sm:px-6 py-3.5 border-t border-brand-hairline/60 flex items-center justify-between text-[10px] uppercase tracking-editorial text-brand-muted group-hover:text-brand-black transition-colors min-h-[44px]">
                 <span>{language === 'fr' ? 'Détails de la matière' : 'Material details'}</span>
-                <span className="text-brand-clay">+</span>
+                <span className="text-brand-clay text-sm font-light">+</span>
               </div>
             </motion.div>
           ))}
@@ -141,7 +141,7 @@ export default function MaterialInspector() {
           <div
             data-lenis-prevent="true"
             onClick={() => setSelectedMaterial(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-brand-black/75 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 bg-brand-black/75 backdrop-blur-sm"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -149,27 +149,27 @@ export default function MaterialInspector() {
               exit={{ opacity: 0, scale: 0.95 }}
               data-lenis-prevent="true"
               onClick={(e) => e.stopPropagation()}
-              className="bg-brand-bg border border-brand-hairline max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl custom-scrollbar overscroll-contain"
+              className="bg-brand-bg border border-brand-hairline max-w-2xl w-full max-h-[92vh] sm:max-h-[90vh] overflow-y-auto p-4 sm:p-8 relative shadow-2xl custom-scrollbar overscroll-contain"
             >
               <button
                 type="button"
                 onClick={() => setSelectedMaterial(null)}
-                className="absolute top-6 right-6 p-2 text-brand-black hover:text-brand-clay transition-colors"
+                className="absolute top-4 sm:top-6 right-4 sm:right-6 p-2 text-brand-black hover:text-brand-clay transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label="Close material modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="flex items-center space-x-2 text-[10px] uppercase tracking-monograph text-brand-clay mb-2 font-mono">
+              <div className="flex items-center space-x-2 text-[9px] sm:text-[10px] uppercase tracking-monograph text-brand-clay mb-2 font-mono">
                 <Layers className="w-3.5 h-3.5" />
                 <span>SPECIMEN ARCHITECTURAL</span>
               </div>
 
-              <h3 className="font-serif text-3xl text-brand-black mb-4">
+              <h3 className="font-serif text-2xl sm:text-3xl text-brand-black mb-3 sm:mb-4 pr-10">
                 {selectedMaterial.name}
               </h3>
 
-              <div className="h-64 sm:h-72 w-full overflow-hidden border border-brand-hairline mb-6 bg-brand-sand/40">
+              <div className="h-48 sm:h-64 lg:h-72 w-full overflow-hidden border border-brand-hairline mb-4 sm:mb-6 bg-brand-sand/40">
                 <img
                   src={selectedMaterial.imageUrl}
                   alt={selectedMaterial.name}
@@ -177,7 +177,7 @@ export default function MaterialInspector() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4 text-xs font-sans border-y border-brand-hairline py-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs font-sans border-y border-brand-hairline py-3 sm:py-4 mb-4 sm:mb-6">
                 <div>
                   <span className="text-[10px] uppercase tracking-editorial text-brand-muted block">Provenance</span>
                   <span className="text-brand-black font-medium">{selectedMaterial.origin}</span>
@@ -188,7 +188,7 @@ export default function MaterialInspector() {
                 </div>
               </div>
 
-              <div className="space-y-3 text-xs font-sans text-brand-muted leading-relaxed mb-6">
+              <div className="space-y-2.5 sm:space-y-3 text-xs font-sans text-brand-muted leading-relaxed mb-6">
                 <p>
                   <strong className="text-brand-black font-medium">
                     {language === 'fr' ? 'Comportement & Patine :' : 'Aging & Patina :'}
@@ -209,7 +209,7 @@ export default function MaterialInspector() {
                 <button
                   type="button"
                   onClick={() => setSelectedMaterial(null)}
-                  className="px-6 py-2.5 bg-brand-black text-brand-bg text-xs uppercase tracking-editorial hover:bg-brand-clay transition-colors"
+                  className="w-full sm:w-auto min-h-[44px] px-6 py-2.5 bg-brand-black text-brand-bg text-xs uppercase tracking-editorial hover:bg-brand-clay transition-colors flex items-center justify-center"
                 >
                   {language === 'fr' ? 'Fermer la fiche' : 'Close sheet'}
                 </button>
