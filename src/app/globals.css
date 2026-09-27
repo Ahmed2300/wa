@@ -4,12 +4,14 @@
 
 @layer base {
   :root {
-    --brand-bg: #F3EEE7;
-    --brand-sand: #E8E0D5;
-    --brand-black: #24211D;
-    --brand-muted: #7A7369;
-    --brand-bronze: #8A7A5C;
-    --brand-clay: #B08968;
+    --brand-bg: #F5F3F0;
+    --brand-sand: #D6D3CE;
+    --brand-black: #080808;
+    --brand-muted: #6A6567;
+    --brand-stone: #6A6567;
+    --brand-bronze: #6A6567;
+    --brand-clay: #B23A22;
+    --brand-terracotta: #B23A22;
   }
 
   html {
@@ -56,5 +58,5 @@ html.lenis, html.lenis body {
 /* Custom architectural hairline rules */
 .architectural-hairline {
   height: 1px;
-  background-color: rgba(36, 33, 29, 0.12);
+  background-color: rgba(8, 8, 8, 0.10);
 }

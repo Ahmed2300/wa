@@ -3,7 +3,7 @@ import { Project, ServiceItem, StudioStep, MaterialSpecimen, SocialTile, Testimo
 // Pure, High-Resolution Architectural Photography Assets (Verified JPEGs, No Logo Overlays)
 export const BRAND_ASSETS = {
   // Official Wordmark Vector
-  wordmark: "https://lh3.googleusercontent.com/aida-public/AB6AXuC_khzKFZGLlG_y9IU85606kI4T4QT2MVO-WBI5GpXvkdpikqIBzx9ilep2b-9Ze85jtT38yZ5OweWWivxqAlhR1nrs4gL8uRs_Dtaqal1KF2zmax-8rmlL5rwUp5s3iUv2XKY-tE6htpxgi8OzAQFXCCKqmESf0RIK9v9wqJWBEW2Kq7rYDkdVuVvGs5er_wLtgTYamRgE5K1n6c9Cfrenkkn243N5Uo7Z-rWl8ZjawlAVZhoC_9YNJ0OqNii6Zl24vQ",
+  wordmark: "/brand-logo.png",
   // Full-bleed Parisian luxury apartment interior (soft morning daylight, chevron parquet, linen sofa)
   heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVi5ap24Wn6VkYm_Sc5n5SsykQa9fbuxsp_iZwxaH3R3VKZYwoGgu2CQtSIYBSXOUYuA1ynHrRH51ce9O3ZPB2D0SQD8Wg5wwEIxJEtZylvc6GHu3fZL9jQGsg9tpaEQ-czCzk7cnVccGkYpa-p8oLgvsPSQj5Er0x33H5o2FidHeqHGt0Y6G6UjDMb7ZNciZOTeuZFFRu8wJd2AmD2NYkzZva6kfvwvp1rqWJkJYNXbskMRFaclH",
   // Sunlit Parisian atelier interior with high ceilings and drawing boards

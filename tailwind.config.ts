@@ -10,15 +10,17 @@ export default {
     extend: {
       colors: {
         brand: {
-          bg: "#F3EEE7",
-          sand: "#E8E0D5",
-          sandLight: "#F8F5F0",
-          hairline: "rgba(36, 33, 29, 0.12)",
-          hairlineDark: "rgba(36, 33, 29, 0.25)",
-          black: "#24211D",
-          muted: "#7A7369",
-          bronze: "#8A7A5C",
-          clay: "#B08968",
+          bg: "#F5F3F0",
+          sand: "#D6D3CE",
+          sandLight: "#EBE8E3",
+          hairline: "rgba(8, 8, 8, 0.10)",
+          hairlineDark: "rgba(8, 8, 8, 0.25)",
+          black: "#080808",
+          muted: "#6A6567",
+          stone: "#6A6567",
+          bronze: "#6A6567",
+          clay: "#B23A22",
+          terracotta: "#B23A22",
         },
       },
       fontFamily: {

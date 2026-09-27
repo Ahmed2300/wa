@@ -48,34 +48,38 @@ export default function PageTransition() {
           {/* Central Monogram & Typographic Brand Reveal */}
           <div className="flex flex-col items-center text-center px-6 z-10">
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-5"
+            >
+              <img
+                src="/brand-logo.png"
+                alt="WA Design Monogram"
+                className="h-14 sm:h-16 w-auto object-contain mx-auto"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center space-x-3 mb-4"
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center space-x-3 mb-3"
             >
               <span className="w-8 h-[1px] bg-brand-clay" />
-              <span className="font-sans text-[10px] tracking-monograph uppercase text-brand-clay">
+              <span className="font-sans text-[10px] tracking-monograph uppercase text-brand-clay font-medium">
                 ARCHITECTURE D&apos;INTÉRIEUR
               </span>
               <span className="w-8 h-[1px] bg-brand-clay" />
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, letterSpacing: '0.15em' }}
-              animate={{ opacity: 1, letterSpacing: '0.22em' }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif text-3xl sm:text-5xl lg:text-6xl text-brand-black font-normal tracking-[0.2em] mb-4 uppercase"
-            >
-              WA DESIGN
-            </motion.h1>
-
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-sans text-[11px] uppercase tracking-editorial text-brand-muted mb-8"
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="font-sans text-[10px] uppercase tracking-editorial text-brand-muted mb-8 font-mono"
             >
-              FRANCE · PARIS
+              PARIS · ÎLE-DE-FRANCE · HAUTE EXIGENCE
             </motion.p>
 
             {/* Seamless Progress Line */}

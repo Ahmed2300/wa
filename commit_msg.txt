@@ -1,0 +1,13 @@
+feat: apply official WA Design brand identity color theme
+
+- Extracted exact brand colors from visual identity guide:
+  - Charcoal Black: #080808 (primary architectural dark & text)
+  - Stone Gray: #6A6567 (secondary text, borders, metadata)
+  - Warm Gray: #D6D3CE (tactile limestone/parchment surfaces)
+  - Terracotta Red: #B23A22 (signature monogram circle dot & accents)
+- Updated tailwind.config.ts and globals.css with new brand theme tokens
+- Extracted clean transparent brand logo (/brand-logo.png) with monogram and terracotta dot
+- Updated PageTransition curtain reveal with official monogram and colors
+- Updated CustomCursor with Terracotta Red pinpoint (#B23A22) and Charcoal border
+- Regenerated favicons (SVG, PNG, ICO, Apple Touch) with Charcoal, Warm Gray, and Terracotta dot
+- Regenerated 1200x630 OpenGraph preview card with new color system

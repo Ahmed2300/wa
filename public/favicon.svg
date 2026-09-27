@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" fill="#24211D" rx="0"/>
-  <rect x="2.5" y="2.5" width="59" height="59" fill="none" stroke="#B08968" stroke-width="1" stroke-opacity="0.45"/>
-  <text x="32" y="44" font-family="'EB Garamond', Garamond, 'Didot', Georgia, serif" font-size="36" font-weight="700" fill="#F3EEE7" text-anchor="middle" letter-spacing="-1">
-    W<tspan fill="#B08968">A</tspan>
+  <rect width="64" height="64" fill="#080808" rx="0"/>
+  <rect x="2.5" y="2.5" width="59" height="59" fill="none" stroke="#6A6567" stroke-width="1" stroke-opacity="0.35"/>
+  <text x="30" y="44" font-family="'EB Garamond', Garamond, 'Didot', Georgia, serif" font-size="34" font-weight="700" fill="#D6D3CE" text-anchor="middle" letter-spacing="-1">
+    WA
   </text>
+  <circle cx="47" cy="40" r="4" fill="#B23A22" />
 </svg>
