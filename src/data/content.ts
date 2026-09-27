@@ -4,12 +4,12 @@ import { Project, ServiceItem, StudioStep, MaterialSpecimen, SocialTile, Testimo
 export const BRAND_ASSETS = {
   // Official Wordmark Vector
   wordmark: "/brand-logo.png",
-  // Full-bleed Parisian luxury apartment interior (soft morning daylight, chevron parquet, linen sofa)
-  heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVi5ap24Wn6VkYm_Sc5n5SsykQa9fbuxsp_iZwxaH3R3VKZYwoGgu2CQtSIYBSXOUYuA1ynHrRH51ce9O3ZPB2D0SQD8Wg5wwEIxJEtZylvc6GHu3fZL9jQGsg9tpaEQ-czCzk7cnVccGkYpa-p8oLgvsPSQj5Er0x33H5o2FidHeqHGt0Y6G6UjDMb7ZNciZOTeuZFFRu8wJd2AmD2NYkzZva6kfvwvp1rqWJkJYNXbskMRFaclH",
-  // Sunlit Parisian atelier interior with high ceilings and drawing boards
-  studioImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxkdeUQwIUloH6Kx2Rc3s43nKrniaGSJMnaChiB973lsRQcZdcwb71SQArlSXvfQhlrw1tXl0i4O1LJa4CFRSgze7YmEZeknwndddQeJO68F5RdBl4Q8Xhbpr48yrkDCrhj18feiKeh7wyrsUGGUkX6He8Ukl7Ryn9oCC_kyrtO85SQmyUj-VZvcsL9smfAyxa06dcJO_aC0l0yrq1OkHtxj_TDyNQ-1Rky-6YyTaZKBXXu4aT87Hg",
-  // Authentic Parisian architecture atelier in 6th arrondissement (drawing table, stone & fabric samples)
-  contactImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuACOtuyVNWoOkx-Gxa5DY3t7UOrtBfDyPsDuVUk0gTN-_mO2DygkJ2sEpEWAI1CwdTmD5-ybKOzMSmk3yB7srLWyMOOVERB_p0f1PUkxLmsFCOLXAgBiPKnAduW0ahI8MNlQmoMP0n6Rt7G-a4to9Xhxoc8mfMgBEjvufCVVS2fUFZB62EGz2WIKW4tJo7r247taDXiQFF8p_U0x5GghaHyV9DLHyAD0S87V2v4xd57Q_-n17269_1E",
+  // Full-bleed Parisian luxury apartment interior (2064x1152 Retina, soft morning daylight, chevron parquet, linen sofa)
+  heroImage: "/hero-paris-luxury.jpg",
+  // Sunlit Parisian atelier interior with high ceilings and drawing boards (2112x1152 Retina)
+  studioImage: "/studio-paris.jpg",
+  // Authentic Parisian architecture atelier in 6th arrondissement (2112x1152 Retina)
+  contactImage: "/contact-paris.jpg",
 };
 
 export const CONTENT = {
