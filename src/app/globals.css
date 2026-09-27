@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-bg: #F3EEE7;
+    --brand-sand: #E8E0D5;
+    --brand-black: #24211D;
+    --brand-muted: #7A7369;
+    --brand-bronze: #8A7A5C;
+    --brand-clay: #B08968;
+  }
+
+  html {
+    scroll-behavior: auto !important; /* Lenis takes over smooth scroll */
+    background-color: var(--brand-bg);
+    color: var(--brand-black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--brand-bg);
+    color: var(--brand-black);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--brand-sand);
+    color: var(--brand-black);
+  }
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom architectural hairline rules */
+.architectural-hairline {
+  height: 1px;
+  background-color: rgba(36, 33, 29, 0.12);
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>WA Design France — Architecture d'Intérieur &amp; Rénovation Paris</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#F3EEE7',
+              sand: '#E8E0D5',
+              hairline: '#DCD4C8',
+              black: '#24211D',
+              muted: '#7A7369',
+              clay: '#B08968',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          },
+          letterSpacing: {
+            editorial: '0.22em',
+            subtle: '0.08em',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Architectural Reset Styles -->
+<style data-purpose="architectural-base">
+    body {
+      background-color: #F3EEE7;
+      color: #24211D;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+      background-color: #E8E0D5;
+      color: #24211D;
+    }
+  </style>
+<!-- Button and Link Micro-interactions -->
+<style data-purpose="refined-hover-states">
+    .btn-outline {
+      border: 1px solid #24211D;
+      background: transparent;
+      color: #24211D;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-outline:hover {
+      border-color: #B08968;
+      color: #B08968;
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: #B08968;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link:hover {
+      color: #24211D;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg font-sans min-h-screen flex flex-col justify-between selection:bg-brand-sand">
+<!-- BEGIN: SiteHeader -->
+<header class="w-full border-b border-brand-sand/70 bg-brand-bg/95 backdrop-blur-none sticky top-0 z-50 transition-all">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 h-20 sm:h-24 flex items-center justify-between">
+<!-- Wordmark Brand Identity -->
+<a aria-label="WA Design Accueil" class="inline-flex items-center" href="#"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_khzKFZGLlG_y9IU85606kI4T4QT2MVO-WBI5GpXvkdpikqIBzx9ilep2b-9Ze85jtT38yZ5OweWWivxqAlhR1nrs4gL8uRs_Dtaqal1KF2zmax-8rmlL5rwUp5s3iUv2XKY-tE6htpxgi8OzAQFXCCKqmESf0RIK9v9wqJWBEW2Kq7rYDkdVuVvGs5er_wLtgTYamRgE5K1n6c9Cfrenkkn243N5Uo7Z-rWl8ZjawlAVZhoC_9YNJ0OqNii6Zl24vQ" alt="WA DESIGN" class="h-10 sm:h-12 w-auto object-contain"></a>
+<!-- Desktop Navigation and Appointment Action -->
+<nav aria-label="Menu principal" class="hidden md:flex items-center space-x-9 text-xs font-normal tracking-[0.18em] uppercase text-brand-muted">
+<a class="nav-link py-1" href="#projets">Projets</a>
+<span aria-hidden="true" class="text-brand-hairline select-none font-light">·</span>
+<a class="nav-link py-1" href="#studio">Studio</a>
+<span aria-hidden="true" class="text-brand-hairline select-none font-light">·</span>
+<a class="nav-link py-1" href="#services">Services</a>
+<span aria-hidden="true" class="text-brand-hairline select-none font-light">·</span>
+<a class="nav-link py-1" href="#contact">Contact</a>
+<!-- Outline Appointment CTA -->
+<a class="btn-outline inline-block px-5 py-2.5 rounded-[1px] text-[11px] font-normal tracking-[0.2em] ml-2 uppercase" href="#rendez-vous">
+          Prendre rendez-vous
+        </a>
+</nav>
+<!-- Mobile Minimal Trigger -->
+<div class="md:hidden flex items-center">
+<a class="btn-outline px-3 py-1.5 rounded-[1px] text-[10px] tracking-[0.16em] uppercase" href="#rendez-vous">
+          Contact
+        </a>
+</div>
+</div>
+</header>
+<!-- END: SiteHeader -->
+<!-- BEGIN: HeroSection -->
+<main class="w-full flex-grow flex flex-col justify-start">
+<section aria-labelledby="hero-heading" class="max-w-[1440px] mx-auto w-full px-4 sm:px-8 lg:px-16 pt-6 sm:pt-10 pb-12 sm:pb-16">
+<!-- Architectural Full-Bleed Photograph Canvas -->
+<div class="w-full relative overflow-hidden bg-brand-sand/40 border border-brand-sand/60 rounded-[1px]" data-purpose="hero-image-frame">
+<img alt="Full bleed horizontal architectural photograph of a tranquil Parisian luxury apartment interior, soft morning daylight, limewashed plaster walls, natural light oak chevron parquet floor, understated minimalist linen sofa, delicate sheer off-white curtains, high ceiling with subtle historic Haussmannian moldings, quiet luxury, serene, Toteme and Kinfolk aesthetic, no harsh flash, warm neutral sand and beige tones, authentic editorial architecture photo" class="w-full h-[52vh] sm:h-[65vh] lg:h-[74vh] object-cover object-center block" decoding="async" loading="eager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXVi5ap24Wn6VkYm_Sc5n5SsykQa9fbuxsp_iZwxaH3R3VKZYwoGgu2CQtSIYBSXOUYuA1ynHrRH51ce9O3ZPB2D0SQD8Wg5wwEIxJEtZylvc6GHu3fZL9jQGsg9tpaEQ-czCzk7cnVccGkYpa-p8oLgvsPSQj5Er0x33H5o2FidHeqHGt0Y6G6UjDMb7ZNciZOTeuZFFRu8wJd2AmD2NYkzZva6kfvwvp1rqWJkJYNXbskMRFaclH">
+</div>
+<!-- Hero Typographic & Editorial Block -->
+<div class="pt-10 sm:pt-14 lg:pt-16 pb-6 max-w-4xl" data-purpose="hero-content">
+<!-- Eyebrow Subtitle -->
+<p class="font-sans text-[11px] sm:text-xs font-normal tracking-[0.25em] text-brand-muted uppercase mb-4 sm:mb-5">
+          RÉNOVATION D'APPARTEMENTS À PARIS
+        </p>
+<!-- Main Display Headline -->
+<h1 class="font-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-light text-brand-black leading-[1.15] sm:leading-[1.12] mb-5 tracking-tight" id="hero-heading">
+          Des intérieurs pensés pour durer.
+        </h1>
+<!-- Editorial Body Description -->
+<p class="font-sans text-brand-muted text-sm sm:text-base font-light leading-relaxed max-w-2xl mb-8">
+          Rénovation et architecture d’intérieur sur-mesure pour appartements haussmanniens et contemporains.
+        </p>
+<!-- Action Element -->
+<div>
+<a class="btn-outline inline-flex items-center justify-center px-7 py-3.5 rounded-[1px] text-xs font-medium tracking-editorial uppercase" href="#projets">
+            Découvrir nos projets
+          </a>
+</div>
+</div>
+</section>
+</main>
+<!-- END: HeroSection -->
+<!-- BEGIN: ArchitecturalProjectStrip -->
+<footer class="w-full border-t border-brand-sand bg-brand-bg py-5 sm:py-6" data-purpose="project-context-strip">
+<div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between text-[11px] font-sans tracking-[0.2em] text-brand-muted uppercase gap-4">
+<!-- Territory Baseline -->
+<div class="flex items-center space-x-2 text-center md:text-left">
+<span class="text-brand-black/90 font-normal">Paris &amp; Île-de-France</span>
+<span aria-hidden="true" class="text-brand-hairline">—</span>
+<span class="">Studio d'architecture &amp; maîtrise d'œuvre</span>
+</div>
+<!-- Curated Selection Hairline Separators -->
+<div class="flex items-center space-x-4 sm:space-x-6 text-brand-muted">
+<span class="text-brand-muted/70 tracking-[0.22em]">Projets récents :</span>
+<div class="flex items-center space-x-3 sm:space-x-4">
+<a class="hover:text-brand-clay transition-colors duration-200" href="#neuilly">Neuilly</a>
+<span aria-hidden="true" class="w-[1px] h-3 bg-brand-hairline"></span>
+<a class="hover:text-brand-clay transition-colors duration-200" href="#chaptal">Chaptal</a>
+<span aria-hidden="true" class="w-[1px] h-3 bg-brand-hairline"></span>
+<a class="hover:text-brand-clay transition-colors duration-200" href="#pergolesi">Pergolèse</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: ArchitecturalProjectStrip -->
+
+
+</body></html>
