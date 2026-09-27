@@ -127,28 +127,42 @@ export default function Navbar() {
             </a>
 
             {/* Language Switcher Toggler with architectural pill indicator */}
-            <div className="flex items-center pl-3 border-l border-brand-hairline space-x-1 text-[10px] tracking-widest font-mono bg-brand-sand/40 p-1 border border-brand-hairline/80">
+            <div className="flex items-center pl-3 border-l border-brand-hairline space-x-1 text-[10px] tracking-widest font-mono bg-brand-sand/40 p-1 border border-brand-hairline/80 relative">
               <button
                 type="button"
                 onClick={() => setLanguage('fr')}
-                className={`transition-all duration-200 px-2 py-0.5 ${
+                className={`relative z-10 transition-colors duration-200 px-2 py-0.5 cursor-pointer ${
                   language === 'fr'
-                    ? 'bg-brand-black text-brand-bg font-medium shadow-xs'
+                    ? 'text-brand-bg font-medium'
                     : 'text-brand-muted hover:text-brand-black'
                 }`}
               >
                 FR
+                {language === 'fr' && (
+                  <motion.div
+                    layoutId="desktopLangPill"
+                    className="absolute inset-0 bg-brand-black -z-10 shadow-xs"
+                    transition={{ type: 'spring', stiffness: 450, damping: 35 }}
+                  />
+                )}
               </button>
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                className={`transition-all duration-200 px-2 py-0.5 ${
+                className={`relative z-10 transition-colors duration-200 px-2 py-0.5 cursor-pointer ${
                   language === 'en'
-                    ? 'bg-brand-black text-brand-bg font-medium shadow-xs'
+                    ? 'text-brand-bg font-medium'
                     : 'text-brand-muted hover:text-brand-black'
                 }`}
               >
                 EN
+                {language === 'en' && (
+                  <motion.div
+                    layoutId="desktopLangPill"
+                    className="absolute inset-0 bg-brand-black -z-10 shadow-xs"
+                    transition={{ type: 'spring', stiffness: 450, damping: 35 }}
+                  />
+                )}
               </button>
             </div>
 

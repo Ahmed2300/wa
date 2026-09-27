@@ -1,16 +1,15 @@
 import { Project, ServiceItem, StudioStep, MaterialSpecimen, SocialTile } from '@/types';
 
+// Pure, High-Resolution Architectural Photography Assets (Verified JPEGs, No Logo Overlays)
 export const BRAND_ASSETS = {
-  // Official Wordmark SVG/PNG
+  // Official Wordmark Vector
   wordmark: "https://lh3.googleusercontent.com/aida-public/AB6AXuC_khzKFZGLlG_y9IU85606kI4T4QT2MVO-WBI5GpXvkdpikqIBzx9ilep2b-9Ze85jtT38yZ5OweWWivxqAlhR1nrs4gL8uRs_Dtaqal1KF2zmax-8rmlL5rwUp5s3iUv2XKY-tE6htpxgi8OzAQFXCCKqmESf0RIK9v9wqJWBEW2Kq7rYDkdVuVvGs5er_wLtgTYamRgE5K1n6c9Cfrenkkn243N5Uo7Z-rWl8ZjawlAVZhoC_9YNJ0OqNii6Zl24vQ",
-  // High-Res Hero Image
+  // Full-bleed Parisian luxury apartment interior (soft morning daylight, chevron parquet, linen sofa)
   heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVi5ap24Wn6VkYm_Sc5n5SsykQa9fbuxsp_iZwxaH3R3VKZYwoGgu2CQtSIYBSXOUYuA1ynHrRH51ce9O3ZPB2D0SQD8Wg5wwEIxJEtZylvc6GHu3fZL9jQGsg9tpaEQ-czCzk7cnVccGkYpa-p8oLgvsPSQj5Er0x33H5o2FidHeqHGt0Y6G6UjDMb7ZNciZOTeuZFFRu8wJd2AmD2NYkzZva6kfvwvp1rqWJkJYNXbskMRFaclH",
-  // High-Res Sunlit Parisian Studio Atelier
+  // Sunlit Parisian atelier interior with high ceilings and drawing boards
   studioImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxkdeUQwIUloH6Kx2Rc3s43nKrniaGSJMnaChiB973lsRQcZdcwb71SQArlSXvfQhlrw1tXl0i4O1LJa4CFRSgze7YmEZeknwndddQeJO68F5RdBl4Q8Xhbpr48yrkDCrhj18feiKeh7wyrsUGGUkX6He8Ukl7Ryn9oCC_kyrtO85SQmyUj-VZvcsL9smfAyxa06dcJO_aC0l0yrq1OkHtxj_TDyNQ-1Rky-6YyTaZKBXXu4aT87Hg",
-  // High-Res Contact Atelier Photography
+  // Authentic Parisian architecture atelier in 6th arrondissement (drawing table, stone & fabric samples)
   contactImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuACOtuyVNWoOkx-Gxa5DY3t7UOrtBfDyPsDuVUk0gTN-_mO2DygkJ2sEpEWAI1CwdTmD5-ybKOzMSmk3yB7srLWyMOOVERB_p0f1PUkxLmsFCOLXAgBiPKnAduW0ahI8MNlQmoMP0n6Rt7G-a4to9Xhxoc8mfMgBEjvufCVVS2fUFZB62EGz2WIKW4tJo7r247taDXiQFF8p_U0x5GghaHyV9DLHyAD0S87V2v4xd57Q_-n17269_1E",
-  // Monogram seal
-  monogramImage: "https://lh3.googleusercontent.com/aida/AEtjO1UCetHyuTpzpJyU7-9ixWbyxiW-aKRlbJZGzxyv8XJcxSTj1V0zbzTan74oOCbj3x5y9ly8LwnczHuYmj5SoYXPdZsOCOgtLWSC09cymsEcuyHBPPmES-FV-gspqzAsQApCzU-xXn6h8uQAufukJwycSO5sontsTIrPjktvJnxIKPMd2_x59bFckQoaaOo0tj5bmiL-ZpNvy3_-qVFXyBkR9VZwrs1h5WSUizAgvcjoMmQar9f6oYjyfw"
 };
 
 export const CONTENT = {
@@ -53,7 +52,7 @@ export const CONTENT = {
           category: "Haussmannien",
           description: "Une réhabilitation intégrale au pied du Palais du Luxembourg. L'espace déploie un dialogue feutré entre les moulures d'époque restaurées au blanc de Meudon et un plancher d'origine en chêne de Bourgogne posé en point de Hongrie.",
           materials: ["Chêne de Bourgogne", "Cheminée en marbre sculpté", "Enduit à la chaux", "Laiton bruni"],
-          imageUrl: "https://lh3.googleusercontent.com/aida/AEtjO1VfAG7CvceNc8X9ef1cVqZznST0O1Rc0FPuQUg-Sgdg3ca4dm3vBssoVf_PLWz_1t6defW4VVPQZyNW1QT4UYNxv0M_xpMLeSRQKYdouSWkrFt3KOo0pDoAp6-K8h7g9xiJAQAWK2qtpNBTSMLw5yEGk6Suxy1cX6f8WilbDqnXLBFvVaTL0tlzpKh-A-PLHERsrUBZOlFeTS_3P3e0T0UlrOTczhR4lj_TkmwgPoqJZmjQe15wdtvQqhI",
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDepriQl0aJ4A3QTUGqOEgUQ1QFvkK52BfcKpaaJvV-EcudFhtMu_XeN4qON0nu8KUhurqqOgrCHTBvzDEJ3Jwg_sEsUjXA4tVuiLICf38dCxsVKPs9_cuxunAtfyyfXfkXfoUh4VnF9qSNBd-PsnmBMULP3q-ANbCxRS5Cy2OFp7BCIUDiRSIJm1iRKL4DLZbyNJ1Wr5onUJfQx5FDYH_WGGnqSebksupOkyc5H5HTlKU_ki9gj9wt",
           featured: true,
         },
         {
@@ -102,25 +101,25 @@ export const CONTENT = {
       steps: [
         {
           step: "01",
-          title: "Écoute & Diagnostic",
-          description: "Analyse approfondie du lieu, examen des structures historiques, audition de vos usages et définition d'un cahier des charges rigoureux."
+          title: "Écoute & Diagnostic Spatial",
+          description: "Analyse approfondie du lieu, examen des structures historiques, sondage des murs porteurs, audition de vos usages de vie et définition d'un cahier des charges rigoureux."
         },
         {
           step: "02",
-          title: "Conception & Matières",
-          description: "Plans architecturaux millimétrés, perspectives 3D d'éclairage naturel, sélection physique des échantillons de matériaux et chiffrage transparent."
+          title: "Conception & Calepinage Matières",
+          description: "Plans architecturaux millimétrés (1:20), simulation d'éclairage naturel, sélection physique des échantillons de matériaux en atelier et chiffrage transparent poste par poste."
         },
         {
           step: "03",
           title: "Réalisation & Maîtrise d'Œuvre",
-          description: "Coordination quotidienne des artisans d'art, contrôle strict des finitions, menuiserie sur-mesure et livraison clés en main sans compromis."
+          description: "Coordination quotidienne des compagnons et artisans d'art, contrôle strict de chaque alignement, pose de menuiserie sur-mesure et livraison clés en main sans compromis."
         }
       ] as StudioStep[],
       pillars: [
-        { title: "Matériaux pérennes", desc: "Chêne massif, calcaires de carrière française, marbres mats non-rebouchés." },
-        { title: "Sur-mesure intégral", desc: "Agencements sculptés sur place pour épouser les irrégularités de l'ancien." },
-        { title: "Transparence totale", desc: "Planning rigoureux et reporting hebdomadaire des étapes du chantier." },
-        { title: "Artisans d'exception", desc: "Compagnons ébénistes, tailleurs de pierre et staffeurs parisiens." }
+        { title: "Matériaux pérennes", desc: "Chêne massif de forêt gérée, calcaires de carrières françaises, marbres satinés non-rebouchés." },
+        { title: "Sur-mesure intégral", desc: "Agencements sculptés sur place pour épouser les subtiles irrégularités du bâti historique." },
+        { title: "Transparence totale", desc: "Planning rigoureux, carnet de suivi hebdomadaire et respect strict des engagements budgétaires." },
+        { title: "Artisans d'exception", desc: "Compagnons ébénistes, tailleurs de pierre et staffeurs-ornemanistes parisiens." }
       ]
     },
     services: {
@@ -204,69 +203,70 @@ export const CONTENT = {
       handle: "@wa.design.france",
       instagramUrl: "https://www.instagram.com/wa.design.france/",
       exploreMore: "Consulter notre Instagram",
+      // 9 Completely Unique Authentic Photographic Images (Zero Logos, Zero Cropped Graphics)
       tiles: [
         {
           id: 1,
-          imageUrl: "https://lh3.googleusercontent.com/aida/AEtjO1VfAG7CvceNc8X9ef1cVqZznST0O1Rc0FPuQUg-Sgdg3ca4dm3vBssoVf_PLWz_1t6defW4VVPQZyNW1QT4UYNxv0M_xpMLeSRQKYdouSWkrFt3KOo0pDoAp6-K8h7g9xiJAQAWK2qtpNBTSMLw5yEGk6Suxy1cX6f8WilbDqnXLBFvVaTL0tlzpKh-A-PLHERsrUBZOlFeTS_3P3e0T0UlrOTczhR4lj_TkmwgPoqJZmjQe15wdtvQqhI",
-          caption: "Lumière matinale rasante sur les moulures restaurées de l'Appartement Tournon.",
-          tag: "#Paris6 #Haussmann",
-          location: "Saint-Germain-des-Prés"
-        },
-        {
-          id: 2,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDepriQl0aJ4A3QTUGqOEgUQ1QFvkK52BfcKpaaJvV-EcudFhtMu_XeN4qON0nu8KUhurqqOgrCHTBvzDEJ3Jwg_sEsUjXA4tVuiLICf38dCxsVKPs9_cuxunAtfyyfXfkXfoUh4VnF9qSNBd-PsnmBMULP3q-ANbCxRS5Cy2OFp7BCIUDiRSIJm1iRKL4DLZbyNJ1Wr5onUJfQx5FDYH_WGGnqSebksupOkyc5H5HTlKU_ki9gj9wt",
-          caption: "Sculpture du vide : détail de l'escalier hélicoïdal en chêne de France blanchi.",
+          caption: "Sculpture du vide : escalier hélicoïdal sur-mesure en chêne de France blanchi.",
           tag: "#EscalierSurMesure",
           location: "Faubourg Saint-Germain"
         },
         {
+          id: 2,
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuABAXe16Zck3J_LzBdHinRfj465Y9StCtCMABUbiYda0-zdmerIcVTOPOfNY7uwLucnvy2-ib-10TQLPR28oz7x2yDGPseFDeRAoUhwA9cCvc8k2G6CvSFk8Q49JkSBQH3K1N3UaXalQkFSPOWE9pPFPRRwAeMUgPzcl7FSKClUIx34ZFpOujlUtDNDuBOg1J04FtuU_MsOdRMPo2kVua37Z0aqxJkr7_fOFJzaUwN0UQYk9tN-rghg",
+          caption: "Élaboration des plans d'exécution et sélection tactile des échantillons à l'atelier.",
+          tag: "#AtelierConception",
+          location: "Paris VIe"
+        },
+        {
           id: 3,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDRp_7KV7_hz-SaT8VUkdxdNvhzaD22ybIBgODssxD5p8gMMLjDMLgU80qP-pQFADTanTuxgOm1G9RUW-KGC3Pe-79RH1KtEatFQNk6oXpNwUV7SWJAF5htQuE7lHTP0a5EYW0D5eiTHl_16BhFoHghejJtcj_cYJk7Hq2-voB43JhJF94M4h4qB-zDp-MhbX5ByEm1J3SvY4RWJkeQMd8iXH6Up18jKWEbJ0iDEkc4u64v3E11yQS8",
-          caption: "Dialogue minéral : la pierre de taille du XVIIe siècle mise à nu.",
+          caption: "Dialogue minéral : la pierre de taille du XVIIe siècle mise à nu avec boiseries chêne.",
           tag: "#Marais #Heritage",
           location: "Rue de Turenne"
         },
         {
           id: 4,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuA_254KOK60UDZZT9jO_qLVmpsKK2M3jbjd6qaeOVjHxb4oKlhyWwWRfChiJSYYshOA3D3V3xUIMo5eBs-T3kPhpi9mCnO9sOawxQcdESFsizA19LiUBHb9_ofHMptUWSfvOeSpJbHjhDL0ieXDIPr9-_9zOcZmvW8WoCjv5v1_dvsoEcSzjAghpBYOLnFxBbUE5QULn0Co9tOIKb9ylLhTwUOuzBUn65R4AyaNk6gLLoT4m4gER3Tf",
-          caption: "Calepinage de travertin brut et perspectives fuyantes.",
+          caption: "Calepinage de travertin brut et perspectives fuyantes dans l'espace bain.",
           tag: "#Travertin #Matières",
           location: "Neuilly-sur-Seine"
         },
         {
           id: 5,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVi5ap24Wn6VkYm_Sc5n5SsykQa9fbuxsp_iZwxaH3R3VKZYwoGgu2CQtSIYBSXOUYuA1ynHrRH51ce9O3ZPB2D0SQD8Wg5wwEIxJEtZylvc6GHu3fZL9jQGsg9tpaEQ-czCzk7cnVccGkYpa-p8oLgvsPSQj5Er0x33H5o2FidHeqHGt0Y6G6UjDMb7ZNciZOTeuZFFRu8wJd2AmD2NYkzZva6kfvwvp1rqWJkJYNXbskMRFaclH",
-          caption: "Sérénité d'un salon parisien : lin texturé et parquet en point de Hongrie.",
+          caption: "Sérénité d'un salon parisien : lin texturé, cheminée restaurée et parquet point de Hongrie.",
           tag: "#QuietLuxury",
           location: "Paris VIIIe"
         },
         {
           id: 6,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-xesGI6YBFSabEqVdWVgopLlKaceHBuzx8zvGz0-74GQJItq1B_u3KW7wZ_RHIImLnqfxQdhDgiWnDLnq4sZB4HgyF6eWYdc_3qGYt6lEiwheUcYp9xGg3SaqAqUle_Srnb-shd1Krq8PHEfx6WtPHqh-mk2HukaHsvpdHOqIS9ZZLyD2s0H9mDTJTUAy2fRVLjbmW4dySKwi7W8YalvDrV4cLJrFASkNfEVQU1JMC9OoRXBQMC-c",
-          caption: "Détail de ferronnerie : poignée de porte en bronze massif patiné au feu.",
+          caption: "Détail de ferronnerie d'art : poignée de porte en bronze massif patiné au feu.",
           tag: "#BronzePatine",
           location: "Quartier Latin"
         },
         {
           id: 7,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2CCP9522LM9rTVWdyiMwMtkKNVpz4koTqZSNLvQN9tjiEY25rvFtdquDGNnQ8ttlZ8j1pJNd7dLbm84pu6DcToVZ_EKHYCk_16knOB3VWE12uoMdrqNL6euj3_9pYB_DP3aFOgzlrWwf7mbXJ4H3DWKDOGG-8OTD46xiF5m9bFPrhygrXow4WXKwJxUrzEy7IXjXsw87KvSbQuoQwKiJGW07Lh9VYnOBvB8jee_ljpEPC7XtJwN0",
-          caption: "Les teintes de sable et de chaux : l'harmonie minérale de nos chantiers.",
-          tag: "#ChantierParis",
+          caption: "Lumière matinale rasante sur les fenêtres haussmanniennes et le parquet chevron.",
+          tag: "#LumiereNaturelle",
           location: "Paris VIIe"
         },
         {
           id: 8,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxkdeUQwIUloH6Kx2Rc3s43nKrniaGSJMnaChiB973lsRQcZdcwb71SQArlSXvfQhlrw1tXl0i4O1LJa4CFRSgze7YmEZeknwndddQeJO68F5RdBl4Q8Xhbpr48yrkDCrhj18feiKeh7wyrsUGGUkX6He8Ukl7Ryn9oCC_kyrtO85SQmyUj-VZvcsL9smfAyxa06dcJO_aC0l0yrq1OkHtxj_TDyNQ-1Rky-6YyTaZKBXXu4aT87Hg",
-          caption: "L'Atelier d'Architecture : planches de matières et calepinage.",
+          caption: "L'Atelier d'Architecture : planches de matières et calepinage sous la verrière.",
           tag: "#AtelierArchitecture",
           location: "Paris VIe"
         },
         {
           id: 9,
-          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBbq-uKe3W7gP3sVpv3UCx4mwmXmMw6pQonXn8F5ZjtwHNHn0WMyEUiXlwxjM59zoy3Jbs17DV8KPtVgycG43eo6d_Xicdpg59ek9VMipSRKMbELk_e3NKfg5-o1CBDxcvkt4umiD9ptza8MPJYW-VQCFBb6FGiMbcZ5aepMbX8GVbLg9XvwGT2of783_fv5fZksmQu3OHrALLqkkT7OASMGMfmpFUuvs0BrrhtcAh6HSSPfEeRW7Ys",
-          caption: "Grain de la pierre de taille parisienne sous la lumière douce du matin.",
-          tag: "#PierreDeTaille",
-          location: "Paris IVe"
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDd9WF6IED3_rBy63dwt6hJY5vorV6cyZV2pgj9h709VT53TWTNH4xYbdods0VFpc3wRgYvIdE9tFtspRVeTxYbYpcCdpONOdZMESr_45P-IFB9-xl1Whi0i03FsP-DPEzJ0V7HjHbkMqgo38qILRWjyPJ_K3uFFhEQSahfxuQOo2NpTHjdH-RiFxUodKo0aEQ9Gdi1i1AzX1AJtmrefL1whA3u8936UY9RDn1HB9F_OJSs33DKkl-5",
+          caption: "Menuiserie contemporaine intégrée affleurante contre le mur en pierre historique.",
+          tag: "#MenuiserieSurMesure",
+          location: "Saint-Germain-des-Prés"
         }
       ] as SocialTile[]
     },
@@ -351,7 +351,7 @@ export const CONTENT = {
           category: "Haussmannian",
           description: "A complete rehabilitation at the foot of the Luxembourg Palace. The space establishes a muted dialogue between historic moldings restored with Meudon whiting and an original Burgundy oak floor laid in Hungarian chevron point.",
           materials: ["Burgundy Oak", "Sculpted Marble Fireplace", "Limewash Plaster", "Burnished Brass"],
-          imageUrl: "https://lh3.googleusercontent.com/aida/AEtjO1VfAG7CvceNc8X9ef1cVqZznST0O1Rc0FPuQUg-Sgdg3ca4dm3vBssoVf_PLWz_1t6defW4VVPQZyNW1QT4UYNxv0M_xpMLeSRQKYdouSWkrFt3KOo0pDoAp6-K8h7g9xiJAQAWK2qtpNBTSMLw5yEGk6Suxy1cX6f8WilbDqnXLBFvVaTL0tlzpKh-A-PLHERsrUBZOlFeTS_3P3e0T0UlrOTczhR4lj_TkmwgPoqJZmjQe15wdtvQqhI",
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDepriQl0aJ4A3QTUGqOEgUQ1QFvkK52BfcKpaaJvV-EcudFhtMu_XeN4qON0nu8KUhurqqOgrCHTBvzDEJ3Jwg_sEsUjXA4tVuiLICf38dCxsVKPs9_cuxunAtfyyfXfkXfoUh4VnF9qSNBd-PsnmBMULP3q-ANbCxRS5Cy2OFp7BCIUDiRSIJm1iRKL4DLZbyNJ1Wr5onUJfQx5FDYH_WGGnqSebksupOkyc5H5HTlKU_ki9gj9wt",
           featured: true,
         },
         {
@@ -505,66 +505,66 @@ export const CONTENT = {
       tiles: [
         {
           id: 1,
-          imageUrl: "https://lh3.googleusercontent.com/aida/AEtjO1VfAG7CvceNc8X9ef1cVqZznST0O1Rc0FPuQUg-Sgdg3ca4dm3vBssoVf_PLWz_1t6defW4VVPQZyNW1QT4UYNxv0M_xpMLeSRQKYdouSWkrFt3KOo0pDoAp6-K8h7g9xiJAQAWK2qtpNBTSMLw5yEGk6Suxy1cX6f8WilbDqnXLBFvVaTL0tlzpKh-A-PLHERsrUBZOlFeTS_3P3e0T0UlrOTczhR4lj_TkmwgPoqJZmjQe15wdtvQqhI",
-          caption: "Raking morning light touching restored moldings in the Tournon Apartment.",
-          tag: "#Paris6 #Haussmann",
-          location: "Saint-Germain-des-Prés"
-        },
-        {
-          id: 2,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDepriQl0aJ4A3QTUGqOEgUQ1QFvkK52BfcKpaaJvV-EcudFhtMu_XeN4qON0nu8KUhurqqOgrCHTBvzDEJ3Jwg_sEsUjXA4tVuiLICf38dCxsVKPs9_cuxunAtfyyfXfkXfoUh4VnF9qSNBd-PsnmBMULP3q-ANbCxRS5Cy2OFp7BCIUDiRSIJm1iRKL4DLZbyNJ1Wr5onUJfQx5FDYH_WGGnqSebksupOkyc5H5HTlKU_ki9gj9wt",
-          caption: "Sculpting the void: detail of the custom helical staircase in bleached French oak.",
+          caption: "Sculpting the void: detail of custom helical staircase in bleached French oak.",
           tag: "#CustomStaircase",
           location: "Faubourg Saint-Germain"
         },
         {
+          id: 2,
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuABAXe16Zck3J_LzBdHinRfj465Y9StCtCMABUbiYda0-zdmerIcVTOPOfNY7uwLucnvy2-ib-10TQLPR28oz7x2yDGPseFDeRAoUhwA9cCvc8k2G6CvSFk8Q49JkSBQH3K1N3UaXalQkFSPOWE9pPFPRRwAeMUgPzcl7FSKClUIx34ZFpOujlUtDNDuBOg1J04FtuU_MsOdRMPo2kVua37Z0aqxJkr7_fOFJzaUwN0UQYk9tN-rghg",
+          caption: "Execution drawings and tactile material sample curation at the atelier.",
+          tag: "#AtelierDesign",
+          location: "Paris 6th"
+        },
+        {
           id: 3,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDRp_7KV7_hz-SaT8VUkdxdNvhzaD22ybIBgODssxD5p8gMMLjDMLgU80qP-pQFADTanTuxgOm1G9RUW-KGC3Pe-79RH1KtEatFQNk6oXpNwUV7SWJAF5htQuE7lHTP0a5EYW0D5eiTHl_16BhFoHghejJtcj_cYJk7Hq2-voB43JhJF94M4h4qB-zDp-MhbX5ByEm1J3SvY4RWJkeQMd8iXH6Up18jKWEbJ0iDEkc4u64v3E11yQS8",
-          caption: "Mineral dialogue: 17th-century exposed limestone restored with reverence.",
+          caption: "Mineral dialogue: 17th-century exposed limestone restored with oak cabinetry.",
           tag: "#Marais #Heritage",
           location: "Rue de Turenne"
         },
         {
           id: 4,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuA_254KOK60UDZZT9jO_qLVmpsKK2M3jbjd6qaeOVjHxb4oKlhyWwWRfChiJSYYshOA3D3V3xUIMo5eBs-T3kPhpi9mCnO9sOawxQcdESFsizA19LiUBHb9_ofHMptUWSfvOeSpJbHjhDL0ieXDIPr9-_9zOcZmvW8WoCjv5v1_dvsoEcSzjAghpBYOLnFxBbUE5QULn0Co9tOIKb9ylLhTwUOuzBUn65R4AyaNk6gLLoT4m4gER3Tf",
-          caption: "Raw travertine calepinage and seamless architectural sightlines.",
+          caption: "Raw travertine calepinage and seamless architectural sightlines in the bathroom suite.",
           tag: "#Travertine #Materials",
           location: "Neuilly-sur-Seine"
         },
         {
           id: 5,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVi5ap24Wn6VkYm_Sc5n5SsykQa9fbuxsp_iZwxaH3R3VKZYwoGgu2CQtSIYBSXOUYuA1ynHrRH51ce9O3ZPB2D0SQD8Wg5wwEIxJEtZylvc6GHu3fZL9jQGsg9tpaEQ-czCzk7cnVccGkYpa-p8oLgvsPSQj5Er0x33H5o2FidHeqHGt0Y6G6UjDMb7ZNciZOTeuZFFRu8wJd2AmD2NYkzZva6kfvwvp1rqWJkJYNXbskMRFaclH",
-          caption: "Tranquility of a Parisian salon: textured linens and Hungarian point parquet.",
+          caption: "Tranquility of a Parisian salon: textured linens, restored fireplace and chevron parquet.",
           tag: "#QuietLuxury",
           location: "Paris 8th"
         },
         {
           id: 6,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-xesGI6YBFSabEqVdWVgopLlKaceHBuzx8zvGz0-74GQJItq1B_u3KW7wZ_RHIImLnqfxQdhDgiWnDLnq4sZB4HgyF6eWYdc_3qGYt6lEiwheUcYp9xGg3SaqAqUle_Srnb-shd1Krq8PHEfx6WtPHqh-mk2HukaHsvpdHOqIS9ZZLyD2s0H9mDTJTUAy2fRVLjbmW4dySKwi7W8YalvDrV4cLJrFASkNfEVQU1JMC9OoRXBQMC-c",
-          caption: "Architectural pull handle forged in flame-patinated raw bronze.",
-          tag: "#ArchitecturalDetail",
-          location: "Foundry Atelier"
+          caption: "Artisanal ironmongery: bespoke solid bronze pull handle with flame patina.",
+          tag: "#BronzePatina",
+          location: "Latin Quarter"
         },
         {
           id: 7,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCZ2CCP9522LM9rTVWdyiMwMtkKNVpz4koTqZSNLvQN9tjiEY25rvFtdquDGNnQ8ttlZ8j1pJNd7dLbm84pu6DcToVZ_EKHYCk_16knOB3VWE12uoMdrqNL6euj3_9pYB_DP3aFOgzlrWwf7mbXJ4H3DWKDOGG-8OTD46xiF5m9bFPrhygrXow4WXKwJxUrzEy7IXjXsw87KvSbQuoQwKiJGW07Lh9VYnOBvB8jee_ljpEPC7XtJwN0",
-          caption: "Hues of warm sand and lime plaster: mineral tranquility in the making.",
-          tag: "#ParisRenovation",
+          caption: "Raking morning daylight filtering through Parisian casement windows onto chevron oak floor.",
+          tag: "#NaturalLight",
           location: "Paris 7th"
         },
         {
           id: 8,
           imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxkdeUQwIUloH6Kx2Rc3s43nKrniaGSJMnaChiB973lsRQcZdcwb71SQArlSXvfQhlrw1tXl0i4O1LJa4CFRSgze7YmEZeknwndddQeJO68F5RdBl4Q8Xhbpr48yrkDCrhj18feiKeh7wyrsUGGUkX6He8Ukl7Ryn9oCC_kyrtO85SQmyUj-VZvcsL9smfAyxa06dcJO_aC0l0yrq1OkHtxj_TDyNQ-1Rky-6YyTaZKBXXu4aT87Hg",
-          caption: "Atelier architecture drawing board and material library.",
+          caption: "Atelier architecture drawing board and material library beneath skylights.",
           tag: "#ArchitectureAtelier",
           location: "Paris 6th"
         },
         {
           id: 9,
-          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBbq-uKe3W7gP3sVpv3UCx4mwmXmMw6pQonXn8F5ZjtwHNHn0WMyEUiXlwxjM59zoy3Jbs17DV8KPtVgycG43eo6d_Xicdpg59ek9VMipSRKMbELk_e3NKfg5-o1CBDxcvkt4umiD9ptza8MPJYW-VQCFBb6FGiMbcZ5aepMbX8GVbLg9XvwGT2of783_fv5fZksmQu3OHrALLqkkT7OASMGMfmpFUuvs0BrrhtcAh6HSSPfEeRW7Ys",
-          caption: "Grain of Parisian limestone under the morning sun.",
-          tag: "#LimestoneTexture",
-          location: "Paris 4th"
+          imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDd9WF6IED3_rBy63dwt6hJY5vorV6cyZV2pgj9h709VT53TWTNH4xYbdods0VFpc3wRgYvIdE9tFtspRVeTxYbYpcCdpONOdZMESr_45P-IFB9-xl1Whi0i03FsP-DPEzJ0V7HjHbkMqgo38qILRWjyPJ_K3uFFhEQSahfxuQOo2NpTHjdH-RiFxUodKo0aEQ9Gdi1i1AzX1AJtmrefL1whA3u8936UY9RDn1HB9F_OJSs33DKkl-5",
+          caption: "Contemporary bespoke millwork flush-integrated against historic stone masonry.",
+          tag: "#BespokeJoinery",
+          location: "Saint-Germain-des-Prés"
         }
       ] as SocialTile[]
     },

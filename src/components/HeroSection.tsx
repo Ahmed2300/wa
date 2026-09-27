@@ -19,9 +19,9 @@ export default function HeroSection() {
         
         {/* Full-Bleed Architectural Photograph Canvas with Monograph Framing */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.99 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="w-full relative overflow-hidden bg-brand-sand/30 border border-brand-hairline rounded-none group"
         >
           {/* Architectural Corner Crosshairs */}
@@ -65,7 +65,7 @@ export default function HeroSection() {
             key={`eyebrow-${language}`}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="flex items-center space-x-3 mb-4 sm:mb-5"
           >
             <span className="w-6 h-[1px] bg-brand-clay" />
@@ -79,7 +79,7 @@ export default function HeroSection() {
             key={`title-${language}`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
             id="hero-heading"
             className="font-serif text-3xl sm:text-5xl lg:text-[4.25rem] font-normal text-brand-black leading-[1.1] sm:leading-[1.05] mb-6 tracking-tight"
           >
@@ -91,7 +91,7 @@ export default function HeroSection() {
             key={`sub-${language}`}
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
             className="font-sans text-brand-muted text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-2xl mb-10"
           >
             {t.subtitle}
@@ -101,7 +101,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.95 }}
             className="flex flex-wrap items-center gap-6"
           >
             <a

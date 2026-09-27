@@ -5,6 +5,7 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import SmoothScroll from '@/components/SmoothScroll';
 import NoiseOverlay from '@/components/NoiseOverlay';
 import CustomCursor from '@/components/CustomCursor';
+import PageTransition from '@/components/PageTransition';
 
 const ebGaramond = EB_Garamond({
   subsets: ['latin'],
@@ -51,6 +52,7 @@ export default function RootLayout({
     <html lang="fr" className={`${ebGaramond.variable} ${sansFont.variable} scroll-smooth`}>
       <body className="bg-brand-bg text-brand-black min-h-screen antialiased selection:bg-brand-sand relative">
         <LanguageProvider>
+          <PageTransition />
           <SmoothScroll>
             {/* Architectural Tactile Atmosphere */}
             <NoiseOverlay />

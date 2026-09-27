@@ -43,95 +43,100 @@ export default function ProjectsSection() {
             </p>
           </div>
 
-          {/* View Mode Switcher (Grid vs. Monograph Index) */}
-          <div className="flex items-center space-x-2 border border-brand-hairline p-1 bg-brand-sand/30 self-start md:self-auto text-[11px] font-sans uppercase tracking-wider">
+          {/* View Mode Switcher (Grid vs. Monograph Index) with Sliding Indicator */}
+          <div className="flex items-center space-x-1 border border-brand-hairline p-1 bg-brand-sand/30 self-start md:self-auto text-[11px] font-sans uppercase tracking-wider relative">
             <button
               type="button"
               onClick={() => setViewMode('grid')}
-              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 transition-all ${
+              className={`relative z-10 inline-flex items-center space-x-1.5 px-3 py-1.5 transition-colors duration-200 ${
                 viewMode === 'grid'
-                  ? 'bg-brand-black text-brand-bg'
+                  ? 'text-brand-bg font-medium'
                   : 'text-brand-muted hover:text-brand-black'
               }`}
             >
               <LayoutGrid className="w-3.5 h-3.5" />
               <span>{language === 'fr' ? 'Galerie' : 'Gallery'}</span>
+              {viewMode === 'grid' && (
+                <motion.div
+                  layoutId="viewModeActivePill"
+                  className="absolute inset-0 bg-brand-black -z-10 shadow-xs"
+                  transition={{ type: 'spring', stiffness: 450, damping: 35 }}
+                />
+              )}
             </button>
             <button
               type="button"
               onClick={() => setViewMode('index')}
-              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 transition-all ${
+              className={`relative z-10 inline-flex items-center space-x-1.5 px-3 py-1.5 transition-colors duration-200 ${
                 viewMode === 'index'
-                  ? 'bg-brand-black text-brand-bg'
+                  ? 'text-brand-bg font-medium'
                   : 'text-brand-muted hover:text-brand-black'
               }`}
             >
               <ListFilter className="w-3.5 h-3.5" />
               <span>{language === 'fr' ? 'Index' : 'Index'}</span>
+              {viewMode === 'index' && (
+                <motion.div
+                  layoutId="viewModeActivePill"
+                  className="absolute inset-0 bg-brand-black -z-10 shadow-xs"
+                  transition={{ type: 'spring', stiffness: 450, damping: 35 }}
+                />
+              )}
             </button>
           </div>
         </div>
 
-        {/* Filter Chips Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-14 border-b border-brand-hairline pb-6 text-xs uppercase tracking-wider font-sans">
-          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-            <button
-              type="button"
-              onClick={() => setActiveFilter('all')}
-              className={`px-4 py-2 border rounded-none transition-all duration-200 text-[11px] ${
-                activeFilter === 'all'
-                  ? 'border-brand-black bg-brand-black text-brand-bg font-medium shadow-xs'
-                  : 'border-brand-hairline text-brand-muted hover:border-brand-black hover:text-brand-black'
-              }`}
-            >
-              {t.filterAll}
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('haussmann')}
-              className={`px-4 py-2 border rounded-none transition-all duration-200 text-[11px] ${
-                activeFilter === 'haussmann'
-                  ? 'border-brand-black bg-brand-black text-brand-bg font-medium shadow-xs'
-                  : 'border-brand-hairline text-brand-muted hover:border-brand-black hover:text-brand-black'
-              }`}
-            >
-              {t.filterHaussmann}
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('duplex')}
-              className={`px-4 py-2 border rounded-none transition-all duration-200 text-[11px] ${
-                activeFilter === 'duplex'
-                  ? 'border-brand-black bg-brand-black text-brand-bg font-medium shadow-xs'
-                  : 'border-brand-hairline text-brand-muted hover:border-brand-black hover:text-brand-black'
-              }`}
-            >
-              {t.filterDuplex}
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('hotel')}
-              className={`px-4 py-2 border rounded-none transition-all duration-200 text-[11px] ${
-                activeFilter === 'hotel'
-                  ? 'border-brand-black bg-brand-black text-brand-bg font-medium shadow-xs'
-                  : 'border-brand-hairline text-brand-muted hover:border-brand-black hover:text-brand-black'
-              }`}
-            >
-              {t.filterHotelParticulier}
-            </button>
+        {/* Filter Tabs Bar with Animated Moving Underline */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-14 border-b border-brand-hairline text-xs uppercase tracking-wider font-sans">
+          <div className="flex items-center space-x-2 sm:space-x-8 overflow-x-auto no-scrollbar">
+            {[
+              { id: 'all', label: t.filterAll },
+              { id: 'haussmann', label: t.filterHaussmann },
+              { id: 'duplex', label: t.filterDuplex },
+              { id: 'hotel', label: t.filterHotelParticulier },
+            ].map((tab) => {
+              const isActive = activeFilter === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveFilter(tab.id)}
+                  className={`relative pb-4 pt-1 px-1 sm:px-2 transition-colors duration-200 text-xs font-sans tracking-editorial uppercase whitespace-nowrap ${
+                    isActive ? 'text-brand-black font-medium' : 'text-brand-muted hover:text-brand-black'
+                  }`}
+                >
+                  <span>{tab.label}</span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="projectsActiveTabUnderline"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-black"
+                      transition={{ type: 'spring', stiffness: 450, damping: 35 }}
+                    />
+                  )}
+                </button>
+              );
+            })}
           </div>
 
-          <div className="text-[11px] text-brand-muted font-mono tracking-widest hidden sm:block">
+          <div className="text-[11px] text-brand-muted font-mono tracking-widest hidden sm:block pb-4">
             {filteredProjects.length} {language === 'fr' ? 'RÉALISATIONS MONOGRAPHIÉES' : 'RECORDED MONOGRAPHS'}
           </div>
         </div>
 
-        {/* VIEW 1: Architectural Asymmetric Gallery */}
-        {viewMode === 'grid' && (
-          <div className="space-y-24 sm:space-y-32">
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => {
-                const isEven = index % 2 === 0;
+        {/* Tab Content with Seamless Exit & Entrance Animations */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`${activeFilter}-${viewMode}`}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {/* VIEW 1: Architectural Asymmetric Gallery */}
+            {viewMode === 'grid' && (
+              <div className="space-y-24 sm:space-y-32">
+                {filteredProjects.map((project, index) => {
+                  const isEven = index % 2 === 0;
 
                 return (
                   <motion.article
@@ -240,9 +245,8 @@ export default function ProjectsSection() {
                   </motion.article>
                 );
               })}
-            </AnimatePresence>
-          </div>
-        )}
+            </div>
+          )}
 
         {/* VIEW 2: Monograph Index List Table */}
         {viewMode === 'index' && (
@@ -286,6 +290,8 @@ export default function ProjectsSection() {
             </div>
           </div>
         )}
+          </motion.div>
+        </AnimatePresence>
 
       </div>
 

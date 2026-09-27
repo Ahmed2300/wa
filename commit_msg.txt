@@ -1,1 +1,8 @@
-feat: add authentic high-resolution architectural imagery across all sections (Services cards, Studio atelier, Contact gallery, and unique 9-tile Instagram grid)
+feat(ux): seamless initialization reveal, active tab sliding indicators & clean architectural studio monograph
+
+- Add luxury architectural intro curtain reveal (PageTransition) on initial page load
+- Implement fluid moving underline (layoutId) for project category filter tabs and studio dossier tabs
+- Implement seamless AnimatePresence mode='wait' exit and entrance animations when switching tabs
+- Redesign StudioSection into a standalone architectural monograph dossier with 4 interactive tabs, technical datum, blueprint specs, and museum-grade archival framing
+- Ensure Instagram 9-tile grid features pure high-resolution architectural photography with zero cropped logo graphics
+- Synchronize hero entrance choreography with the initialization curtain
