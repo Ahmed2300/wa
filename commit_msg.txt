@@ -1,9 +1,0 @@
-feat(content): integrate authentic Wa.Design brand copy across all sections
-
-- Update Hero with official copy: 'Rénovez votre appartement avec élégance et précision'
-- Add 'Notre promesse' and 5 'Pourquoi Wa.Design ?' pillars in ProjectStrip
-- Integrate real project portfolio: Neuilly-sur-Seine (145m²), Rue Chaptal Paris 9e (98m²), Pergolèse Paris 16e (180m²), Marais
-- Add authentic 'Retours clients' testimonials (Famille L. Neuilly, M. et Mme R. Paris 9e)
-- Redesign Studio with official 5-stage method (Étude, Conception, Validation, Travaux, Livraison) and brand values
-- Expand Services to 5 core expertises directly from client dossier
-- Update Contact with official email (contact@wadesignfrance.com), prioritized territory zones, and response commitment
